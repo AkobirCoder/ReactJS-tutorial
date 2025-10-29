@@ -1,0 +1,40 @@
+.heroSection {
+    display: flex;
+    padding: 1rem 3rem;
+    background: rgb(0, 0, 0, 0.7);
+}
+
+.heroSection .heroSectionLogo {
+    flex: 1;
+}
+
+.heroSection .heroSectionLogo img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.heroSection .heroSectionNavbar {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+}
+
+.heroSectionNavbar .heroSectionNavbarMenu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.heroSectionNavbarMenu .navbarMenuItem {
+    margin: 0rem 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.navbarMenuItem a {
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 0.2rem 0.5rem;
+    text-decoration: none;
+}
