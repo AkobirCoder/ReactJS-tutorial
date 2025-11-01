@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client'; // client and production
 import './index.css';
-import App from './App';
+import App from './components/app/App';
 
 // const name = "Akobir";
 
