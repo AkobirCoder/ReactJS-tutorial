@@ -1,3 +1,4 @@
+import { StrictMode } from 'react';
 import { Header, Navbar } from '../header/Header';
 import Field from '../field/Field';
 import Button from '../button/Button';
@@ -79,7 +80,9 @@ function App() {
     // </div>
 
     <div className='App'>
-        <Header />
+        <StrictMode>
+            <Header />
+        </StrictMode>
         <Navbar/>
         <Field />
         <Button />
