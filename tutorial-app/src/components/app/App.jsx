@@ -60,25 +60,25 @@ import './App.css';
 //     }
 // }
 
+
+const User = ({firstName, lastName, link}) => { // `props` ni distruktizatsiya qilish
+    // console.log(props);
+    return (
+        <div
+            style={{
+                textAlign: "justify",
+                maxWidth: "1400px",
+                margin: "0 auto"
+            }}
+        >
+            <h1>Mening ismim - {firstName.name}, familiyam - {lastName()}</h1>
+            <a href={link} target='_blank' rel='noreferrer'>Mening youtube kanalim</a>
+        </div>
+    );
+}
+
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-
     <div className='App'>
         <StrictMode>
             <Header />
@@ -86,6 +86,11 @@ function App() {
         <Navbar/>
         <Field />
         <Button />
+
+        {/* Component xususiyatlari */}
+        <User firstName={{name: "Akobir"}} lastName={() => "Usmonov"} link="https://youtube.com" />
+        <User firstName={{name: "Umar"}} lastName={() => "Shamsiyev"} link="https://google.com" />
+        <User firstName={{name: "Kamron"}} lastName={() => "Ismoilov"} link={"https://facebook.com"} />
     </div>
   );
 }
