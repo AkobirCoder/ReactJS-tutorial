@@ -1,10 +1,23 @@
 import './Movie-list-item.css';
 
-const MovieListItem = () => {
+const MovieListItem = ({name, viewers, favourite}) => {
+    // console.log(favourite);
+
+    // 2-usul: class qo'shish:
+    // let classNames = 'list-group-item d-flex justify-content-between';
+
+    // if (favourite) {
+    //     classNames += ' favourite';
+    // }
+
     return (
-        <li className='list-group-item d-flex justify-content-between'>
-            <span className='list-group-item-label'>Empire of Osman</span>
-            <input type="number" className='list-group-item-input' defaultValue='989' />
+        // 2 - usul:
+        // <li className={classNames}>
+
+        // 1-usul: class qo'shish:
+        <li className={`list-group-item d-flex justify-content-between ${favourite && 'favourite'}`}>
+            <span className='list-group-item-label'>{name}</span>
+            <input type="number" className='list-group-item-input' defaultValue={viewers} />
             <div className='d-flex justify-content-center align-items-center'>
                 <button className='btn-sm btn-cookie' type='button'>
                     <i className='fas fa-cookie'></i>
