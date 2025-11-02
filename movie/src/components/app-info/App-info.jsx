@@ -1,7 +1,10 @@
+import './App-info.css';
+
 const AppInfo = () => {
     return (
-        <div>
-            <h1>AppInfo</h1>
+        <div className='app-info'>
+            <p className='fs-3 text-uppercase'>Barcha kinolar soni:</p>
+            <p className='fs-4 text-uppercase'>Ko'rilgan kinolar soni:</p>
         </div>
     );
 }
