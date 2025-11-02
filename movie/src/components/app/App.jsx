@@ -6,10 +6,10 @@ import './App.css';
 
 const App = () => {
     return (
-        <div className="app">
+        <div className="app font-monospace">
             <div className="content">
                 <AppInfo />
-                <div>
+                <div className="search-panel">
                     <SearchPanel />
                     <AppFilter />
                 </div>
