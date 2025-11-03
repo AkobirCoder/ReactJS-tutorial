@@ -12,16 +12,19 @@ const App = () => {
             name: "Empire of Osman",
             viewers: 988,
             favourite: false,
+            id: 1,
         },
         {
             name: "Ertugrul",
             viewers: 789,
             favourite: false,
+            id: 2,
         },
         {
             name: "Omar",
             viewers: 1091,
             favourite: true,
+            id: 3,
         }
     ];
     
