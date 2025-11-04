@@ -9,12 +9,32 @@ class MyFirstState extends Component {
 
         this.state = {
             counter: 0,
+            text: "text",
         }
     }
 
-    clickHandler = () => {
+    incrementHandler = () => {
         this.setState(prevState => ({
             counter: prevState.counter + 1,
+            text: prevState.text + ' !',
+        }));
+    }
+
+    decrementHandler = () => {
+        this.setState(prevState => ({
+            counter: prevState.counter - 1,
+            // if (text === NaN) {
+            //     text: "text",
+            // } else {
+            //     text: prevState.text - ' !',
+            // }
+        }));
+    }
+
+    resetHandler = () => {
+        this.setState(prevState => ({
+            counter: prevState.counter = 0,
+            text: "text"
         }));
     }
 
@@ -30,7 +50,9 @@ class MyFirstState extends Component {
                         </h4>
                         <a href={link} rel='noreferrer'>This is my account</a>
                         <div className='card-button'>
-                            <button onClick={this.clickHandler} className='btn'>Click</button> {/* hook qo'shish */}
+                            <button onClick={this.incrementHandler} className='btn btn-success'>Inc++</button> {/* hook qo'shish */}
+                            <button onClick={this.decrementHandler} className='btn btn-danger'>Dec--</button>
+                            <button onClick={this.resetHandler} className='btn btn-reset'>Reset</button>
                         </div>
                     </div>
                     <div
@@ -43,7 +65,7 @@ class MyFirstState extends Component {
                     >
                         <img src={logo} alt="logo" />
                         <p className='card-text' >
-                            {this.state.counter}
+                            {this.state.counter} {this.state.text}
                         </p>
                     </div>
                 </div>
