@@ -1,0 +1,40 @@
+.state {
+    width: 600px;
+    margin: 1.5rem 0;
+    text-align: justify;
+    border: 2px solid rgb(180, 180, 180);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.state-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.state-card img {
+    width: 10rem;
+}
+
+.state-card .card-text {
+    margin: 0;
+}
+
+.state-card .card-title {
+    margin-top: 0;
+    color: rgb(52, 50, 50);
+}
+
+.state-card .card-button {
+    margin-top: 1.5rem;
+}
+
+.card-button .btn {
+    color: #fff;
+    background: green;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+}
