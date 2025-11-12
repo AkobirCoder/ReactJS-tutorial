@@ -7,6 +7,7 @@ class StateSecond extends Component {
         super(props);
         this.state = {
             counter: 0,
+            text: 'text',
         }
     }
 
@@ -47,6 +48,7 @@ class StateSecond extends Component {
                     <div className="card-info">
                         <h4>Mening ismim - {ism}, familiyam - {familiya}</h4>
                         <a href={havola} target="_blank" rel="noreferrer">Mening youtube kanalim</a>
+                        <p>{this.state.text}</p>
                         <div className="card-buttons">
                             <button onClick={this.onIncrement} className="btn">Increment</button>
                             <button onClick={this.onDecrement} className="btn">Decrement</button>
@@ -64,3 +66,5 @@ class StateSecond extends Component {
 }
 
 export default StateSecond;
+
+// setState() metodi state da ko'rsatilgan qiymatni o'zgartiradi.
