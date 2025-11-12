@@ -29,9 +29,13 @@ class StateSecond extends Component {
     }
 
     onRestart = () => {
-        this.setState(prevState => ({
-            counter: prevState.counter = 0,
-        }));
+        // this.setState(prevState => ({
+        //     counter: prevState.counter = 0,
+        // }));
+
+        this.setState({
+            counter: 0,
+        });
     }
 
     render() {
