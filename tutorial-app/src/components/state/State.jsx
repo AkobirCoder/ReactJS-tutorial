@@ -1,0 +1,62 @@
+import { Component } from "react";
+
+// import logo from '../../logo.svg';
+
+class StateSecond extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            counter: 0,
+        }
+    }
+
+    onIncrement = () => {
+        // this.setState(() => {
+        //     return {
+        //         counter: this.state.counter + 1,
+        //     }
+        // });
+
+        this.setState(prevState => ({
+            counter: prevState.counter + 1,
+        }));
+    }
+
+    onDecrement = () => {
+        this.setState(prevState => ({
+            counter: prevState.counter - 1,
+        }));
+    }
+
+    onRestart = () => {
+        this.setState(prevState => ({
+            counter: prevState.counter = 0,
+        }));
+    }
+
+    render() {
+        const {ism, familiya, havola} = this.props;
+
+        return(
+            <div>
+                <div className="card">
+                    <div className="card-info">
+                        <h4>Mening ismim - {ism}, familiyam - {familiya}</h4>
+                        <a href={havola} target="_blank" rel="noreferrer">Mening youtube kanalim</a>
+                        <div className="card-buttons">
+                            <button onClick={this.onIncrement} className="btn">Increment</button>
+                            <button onClick={this.onDecrement} className="btn">Decrement</button>
+                            <button onClick={this.onRestart} className="btn">Restart</button>
+                        </div>
+                    </div>
+                    <div className="card-img">
+                        {/* <img src={logo} alt="logo" /> */}
+                        <p>{this.state.counter}</p>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default StateSecond;
