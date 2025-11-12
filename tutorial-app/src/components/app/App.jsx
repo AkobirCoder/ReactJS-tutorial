@@ -4,7 +4,9 @@ import { Header, Navbar } from '../header/Header';
 import Field from '../field/Field';
 import Button from '../button/Button';
 
-// import logo from './logo.svg';
+import StateSecond from '../state/State';
+
+import logo from '../../logo.svg';
 import './App.css';
 
 // const Header = () => {
@@ -112,6 +114,45 @@ class UserSecond extends Component {
 
 // States:
 
+class State extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            counter: 0,
+        }
+    }
+
+    render() {
+        return(
+            <div
+                style={{
+                    textAlign: "justify",
+                    maxWidth: "1000px",
+                    margin: "0 auto",
+                    border: "2px solid gray",
+                    padding: "1.5rem",
+                    display: "flex",
+                    flexDirection: "row-reverse",
+                    alignItems: "center",
+                    gap: "1rem",
+                    background: "#D0D2CD",
+                    borderRadius: "1rem"
+                }}
+            >
+                <div style={{flex: "4", margin: "0rem 1.5rem"}}>
+                    <h1 style={{margin: "0rem"}}>
+                        Title
+                    </h1>
+                    <p style={{}}>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo sequi, similique fuga amet error eum, commodi praesentium sapiente, omnis doloribus quae consequatur fugiat dolorum quos tempore adipisci molestiae animi dolore.
+                    </p>
+                </div>
+                <img className='App-logo' style={{flex: "1"}} src={logo} alt="Logo" />
+            </div>
+        );
+    }
+}
+
 
 function App() {
   return (
@@ -131,6 +172,10 @@ function App() {
 
         {/* Class component xususiyatlari */}
         <UserSecond name={"Alex"} surname={"Bush"} link={"https://telegram.org"} age={41} />
+
+        {/* States */}
+        <State />
+        <StateSecond ism={"Akobir"} familiya={"Usmonov"} havola={"https://youtube.com"} />
     </div>
   );
 }
