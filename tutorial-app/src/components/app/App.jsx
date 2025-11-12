@@ -1,11 +1,8 @@
-import React, {Component} from 'react';
-import { StrictMode } from 'react';
+import { Component, StrictMode } from 'react';
 
 import { Header, Navbar } from '../header/Header';
 import Field from '../field/Field';
 import Button from '../button/Button';
-
-import MyFirstState from '../states/State';
 
 // import logo from './logo.svg';
 import './App.css';
@@ -77,7 +74,7 @@ const User = ({firstName, lastName, link}) => { // `props` ni distruktizatsiya q
                 margin: "0 auto"
             }}
         >
-            <h1>Mening ismim - {firstName.name}, familiyam - {lastName()}</h1>
+            <h1>Mening ismim - {firstName.name}, familiyam - {lastName()}.</h1>
             <a href={link} target='_blank' rel='noreferrer'>Mening youtube kanalim</a>
         </div>
     );
@@ -87,26 +84,26 @@ const User = ({firstName, lastName, link}) => { // `props` ni distruktizatsiya q
 // Class component:
 
 class UserSecond extends Component {
-    constructor(props) {
+    constructor(props, age) {
         super(props);
-        this.age = props.age; // yangi property qo'shish
+        this.age = age;
     }
 
     render() {
-        const {name, surname, link} = this.props;
+        const {name, surname, link, age} = this.props;
 
         console.log(this.props);
 
-        return (
+        return(
             <div
                 style={{
                     textAlign: "justify",
                     maxWidth: "1400px",
                     margin: "0 auto"
-                }}    
+                }}
             >
-                <h1>My name is - {name}, my surname is - {surname}, my age is - {this.age}</h1>
-                <a href={link} target='_blank' rel='noreferrer'>This is my youtube channel</a>
+                <h1>My name is - {name}, my surname is - {surname}. I'm {age} years old.</h1>
+                <a href={link} target='_blank' rel='noreferrer'>This is my channel</a>
             </div>
         );
     }
@@ -114,7 +111,6 @@ class UserSecond extends Component {
 
 
 // States:
-
 
 
 function App() {
@@ -133,19 +129,8 @@ function App() {
         <User firstName={{name: "Kamron"}} lastName={() => "Ismoilov"} link={"https://facebook.com"} />
         <User firstName={{name: "Alibek"}} lastName={() => "Hakimov"} link={"https://telegram.org"} />
 
-        {/* Class components: */}
-        <UserSecond name={"Jack"} surname={"Nicolson"} link={"https://instagram.com"} age={54} />
-
-        {/* States: */}
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "space-evenly"
-            }}
-        >
-            <MyFirstState firstName={"Artyom"} lastName={"Maratov"} link={"https://youtube.com"} />
-            <MyFirstState firstName={"Artyom"} lastName={"Maratov"} link={"https://youtube.com"} />
-        </div>
+        {/* Class component xususiyatlari */}
+        <UserSecond name={"Alex"} surname={"Bush"} link={"https://telegram.org"} age={41} />
     </div>
   );
 }
