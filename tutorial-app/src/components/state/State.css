@@ -9,6 +9,7 @@
     display: flex;
     align-items: stretch;
     justify-content: space-between;
+    border-bottom: 2px solid rgb(114, 196, 255);
 }
 
 .card .card-info {
