@@ -7,7 +7,7 @@
 .cards .card {
     max-width: 500px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
 }
 
@@ -45,17 +45,51 @@
     border: none;
     border-radius: 1rem;
     padding: 0.5rem 1.5rem;
+    color: #fff;
+}
+
+.btn-inc {
+    background: green;
+}
+
+.btn-inc:hover {
+    background: darkgreen;
+}
+
+.btn-dec {
+    background: red;
+}
+
+.btn-dec:hover {
+    background: darkred;
+}
+
+.btn-res {
+    background: rgb(0, 162, 255);
+}
+
+.btn-res:hover {
+    background: rgb(0, 94, 148);
 }
 
 .card .card-img {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: flex-end;
     flex-direction: column;
     flex: 1;
-    height: auto;
+    padding: 1rem 0rem 1.5rem;
+}
+
+.card-img img {
+    flex: 3;
+    width: 100%;
 }
 
 .card-img p {
     margin: 0;
-    align-items: stretch;
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: center;
 }
