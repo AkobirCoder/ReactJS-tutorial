@@ -1,0 +1,61 @@
+.cards {
+    margin: 1rem 1rem;
+    border: 2px solid rgb(114, 196, 255);
+    border-radius: 1rem;
+}
+
+.cards .card {
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card .card-info {
+    flex: 3;
+    text-align: justify;
+    border-right: 2px solid rgb(114, 196, 255);
+    padding: 1rem;
+}
+
+.card-info h4 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+.card-info a {
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+.card-info p {
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+}
+
+.card-info .card-buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-buttons .btn {
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.card .card-img {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    flex: 1;
+    height: auto;
+}
+
+.card-img p {
+    margin: 0;
+    align-items: stretch;
+}
