@@ -119,7 +119,12 @@ class State extends Component {
         super(props);
         this.state = {
             counter: 0,
+            age: '',
         }
+    }
+
+    changeHandler = (event) => {
+        console.log(event.target.value);
     }
 
     render() {
@@ -148,6 +153,10 @@ class State extends Component {
                     </p>
                 </div>
                 <img className='App-logo' style={{flex: "1"}} src={logo} alt="Logo" />
+                <form>
+                    <span>Number:</span>
+                    <input type="text" onChange={this.changeHandler} />
+                </form>
             </div>
         );
     }
