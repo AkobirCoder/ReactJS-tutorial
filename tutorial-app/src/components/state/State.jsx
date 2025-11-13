@@ -1,6 +1,8 @@
 import { Component } from "react";
 
-// import logo from '../../logo.svg';
+import './State.css';
+
+import logo from '../../logo.svg';
 
 class StateSecond extends Component {
     constructor(props) {
@@ -43,11 +45,11 @@ class StateSecond extends Component {
         const {ism, familiya, havola} = this.props;
 
         return(
-            <div>
+            <div className="cards">
                 <div className="card">
                     <div className="card-info">
                         <h4>Mening ismim - {ism}, familiyam - {familiya}</h4>
-                        <a href={havola} target="_blank" rel="noreferrer">Mening youtube kanalim</a>
+                        <a href={havola} target="_blank" rel="noreferrer">Mening shaxsiy kanalim</a>
                         <p>{this.state.text}</p>
                         <div className="card-buttons">
                             <button onClick={this.onIncrement} className="btn">Increment</button>
@@ -56,7 +58,7 @@ class StateSecond extends Component {
                         </div>
                     </div>
                     <div className="card-img">
-                        {/* <img src={logo} alt="logo" /> */}
+                        <img src={logo} alt="logo" />
                         <p>{this.state.counter}</p>
                     </div>
                 </div>
