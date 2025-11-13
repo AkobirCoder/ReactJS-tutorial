@@ -52,9 +52,9 @@ class StateSecond extends Component {
                         <a href={havola} target="_blank" rel="noreferrer">Mening shaxsiy kanalim</a>
                         <p>{this.state.text}</p>
                         <div className="card-buttons">
-                            <button onClick={this.onIncrement} className="btn">Increment</button>
-                            <button onClick={this.onDecrement} className="btn">Decrement</button>
-                            <button onClick={this.onRestart} className="btn">Restart</button>
+                            <button onClick={this.onIncrement} className="btn btn-inc">Increment</button>
+                            <button onClick={this.onDecrement} className="btn btn-dec">Decrement</button>
+                            <button onClick={this.onRestart} className="btn btn-res">Restart</button>
                         </div>
                     </div>
                     <div className="card-img">
