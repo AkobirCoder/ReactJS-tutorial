@@ -175,7 +175,20 @@ function App() {
 
         {/* States */}
         <State />
-        <StateSecond ism={"Akobir"} familiya={"Usmonov"} havola={"https://youtube.com"} />
+        <div
+            style={{
+                display: "flex",
+                justifyContent: "space-evenly",
+                gap: "1rem",
+                border: "2px solid black",
+                margin: "1.5rem 2rem",
+                borderRadius: "1rem"
+            }}
+        >
+            <StateSecond ism={"Akobir"} familiya={"Usmonov"} havola={"https://youtube.com"} />
+            <StateSecond ism={"Mashhurbek"} familiya={"Nasrullayev"} havola={"https://github.com"} />
+            <StateSecond ism={"Diyorbek"} familiya={"Ne'matov"} havola={"https://microsoft.com"} />
+        </div>
     </div>
   );
 }
