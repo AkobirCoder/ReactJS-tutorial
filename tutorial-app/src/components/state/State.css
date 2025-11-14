@@ -94,3 +94,27 @@
     align-items: flex-end;
     justify-content: center;
 }
+
+.cards form {
+    padding: 1rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+form span {
+    font-size: 1.2rem;
+}
+
+form input {
+    max-width: 7rem;
+    border: 2px solid rgb(114, 196, 255);
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+}
+
+form input:focus {
+    outline: none;
+}
