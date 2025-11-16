@@ -35,17 +35,18 @@ class MovieListItem extends Component {
     render() {
         const {name, viewers} = this.props;
         const {favourite, like} = this.state;
+        const {onFavourite, onLike} = this; // onFavourite va onLike metodlarini destruktizatsiya qilish
 
         return (
             <li 
                 className={`list-group-item d-flex justify-content-between ${favourite && 'favourite'} ${like && 'like'}`}
             >
-                <span className='list-group-item-label' onClick={this.onLike}>
+                <span className='list-group-item-label' onClick={onLike}>
                     {name}
                 </span>
                 <input type="number" className='list-group-item-input' defaultValue={viewers} />
                 <div className='d-flex justify-content-center align-items-center'>
-                    <button className='btn-sm btn-cookie' type='button' onClick={this.onFavourite}>
+                    <button className='btn-sm btn-cookie' type='button' onClick={onFavourite}>
                         <i className='fas fa-cookie'></i>
                     </button>
                     <button className='btn-sm btn-trash' type='button'>
