@@ -9,6 +9,28 @@ class MovieListItem extends Component {
             like: false,
         }
     }
+
+    onFavourite = () => {
+        this.setState(({favourite}) => {
+            return {
+                favourite: !favourite,
+            }
+        });
+    }
+
+    // onLike = () => {
+    //     this.setState(({like}) => {
+    //         return {
+    //             like: !like,
+    //         }
+    //     });
+    // }
+
+    onLike = () => {
+        this.setState(({like}) => ({
+            like: !like,
+        }));
+    }
     
     render() {
         const {name, viewers} = this.props;
@@ -16,14 +38,14 @@ class MovieListItem extends Component {
 
         return (
             <li 
-                className={`list-group-item d-flex justify-content-between ${favourite && 'favourite'}`}
+                className={`list-group-item d-flex justify-content-between ${favourite && 'favourite'} ${like && 'like'}`}
             >
-                <span className='list-group-item-label'>
+                <span className='list-group-item-label' onClick={this.onLike}>
                     {name}
                 </span>
                 <input type="number" className='list-group-item-input' defaultValue={viewers} />
                 <div className='d-flex justify-content-center align-items-center'>
-                    <button className='btn-sm btn-cookie' type='button'>
+                    <button className='btn-sm btn-cookie' type='button' onClick={this.onFavourite}>
                         <i className='fas fa-cookie'></i>
                     </button>
                     <button className='btn-sm btn-trash' type='button'>
