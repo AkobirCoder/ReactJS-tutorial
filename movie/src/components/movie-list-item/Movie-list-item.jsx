@@ -33,7 +33,7 @@ class MovieListItem extends Component {
     }
     
     render() {
-        const {name, viewers} = this.props;
+        const {name, viewers, onDelete} = this.props;
         const {favourite, like} = this.state;
         const {onFavourite, onLike} = this; // onFavourite va onLike metodlarini destruktizatsiya qilish
 
@@ -49,7 +49,7 @@ class MovieListItem extends Component {
                     <button className='btn-sm btn-cookie' type='button' onClick={onFavourite}>
                         <i className='fas fa-cookie'></i>
                     </button>
-                    <button className='btn-sm btn-trash' type='button'>
+                    <button className='btn-sm btn-trash' type='button' onClick={onDelete}>
                         <i className='fas fa-trash'></i>
                     </button>
                     <i className='fas fa-star'></i>
