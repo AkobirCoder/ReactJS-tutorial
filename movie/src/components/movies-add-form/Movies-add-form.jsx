@@ -1,12 +1,14 @@
 import { Component } from 'react';
 import './Movies-add-form.css';
 
+import {v4 as uuidv4} from "uuid";
+
 class MoviesAddForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '+998', // default qiymat, boshqarib bo'ladigan form uchun
-            views: '999', // default qiymat, boshqarib bo'ladigan form uchun
+            name: '', // default qiymat, boshqarib bo'ladigan form uchun
+            views: '', // default qiymat, boshqarib bo'ladigan form uchun
         }
     }
 
@@ -16,15 +18,32 @@ class MoviesAddForm extends Component {
         });
     }
 
+    addFormHandler = (event) => {
+        event.preventDefault();
+
+        const {addForm} = this.props;
+        const {name, views} = this.state;
+
+        addForm({
+            name: name, viewers: views, id: uuidv4(),
+        });
+
+        this.setState({
+            name: '',
+            views: '',
+        })
+    }
+
     render() {
         const {name, views} = this.state;
+        const {changeHandlerInput, addFormHandler} = this;
 
         return (
             <div className='movies-add-form'>
                 <h3>Yangi kino qo'shish</h3>
-                <form className='add-form d-flex'>
+                <form className='add-form d-flex' onSubmit={addFormHandler}>
                     <input type="text" className='form-control mx-1 new-post-label' placeholder='Qanday kino?' 
-                        onChange={this.changeHandlerInput} name='name' value={name}
+                        onChange={changeHandlerInput} name='name' value={name}
                     />
                     <input type="number" className='form-control mx-1 new-post-label' placeholder="Nechi marotaba ko'rilgan?" 
                         onChange={this.changeHandlerInput} name='views' value={views}
