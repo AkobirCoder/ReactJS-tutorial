@@ -5,8 +5,8 @@ class MoviesAddForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '+998', // default qiymat
-            views: '999', // default qiymat
+            name: '+998', // default qiymat, boshqarib bo'ladigan form uchun
+            views: '999', // default qiymat, boshqarib bo'ladigan form uchun
         }
     }
 
