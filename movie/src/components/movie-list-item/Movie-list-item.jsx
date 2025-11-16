@@ -4,22 +4,6 @@ import './Movie-list-item.css';
 class MovieListItem extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            favourite: false,
-            like: false,
-        }
-    }
-
-    onFavourite = () => {
-        this.setState(({favourite}) => ({
-            favourite: !favourite,
-        }));
-    }
-
-    onLike = () => {
-        this.setState(({like}) => ({
-            like: !like,
-        }));
     }
     
     render() {
