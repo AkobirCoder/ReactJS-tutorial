@@ -5,42 +5,66 @@ import MovieList from "../movie-list/Movie-list";
 import MoviesAddForm from "../movies-add-form/Movies-add-form";
 
 import './App.css';
+import { Component } from "react";
 
-const App = () => {
-    const data = [
-        {
-            name: "Empire of Osman",
-            viewers: 988,
-            favourite: false,
-            id: 1,
-        },
-        {
-            name: "Ertugrul",
-            viewers: 789,
-            favourite: false,
-            id: 2,
-        },
-        {
-            name: "Omar",
-            viewers: 1091,
-            favourite: true,
-            id: 3,
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: [
+                { name: "Empire of Osman", viewers: 988, favourite: false, id: 1, },
+                { name: "Ertugrul", viewers: 789, favourite: false, id: 2, },
+                { name: "Omar", viewers: 1091, favourite: true, id: 3, },
+            ],
         }
-    ];
-    
-    return (
-        <div className="app font-monospace">
-            <div className="content">
-                <AppInfo />
-                <div className="search-panel">
-                    <SearchPanel />
-                    <AppFilter />
+    }
+
+    onDelete = (id) => {
+        this.setState(({data}) => {
+
+            // Mutable:
+
+            // const index = data.findIndex(c => c.id !== id);
+
+            // data.splice(index, 1);
+
+
+            // Immutable:
+
+            // const newArr = data.filter((item) => {
+            //     return item.id !== id;
+            // });
+
+            // return {
+            //     data: newArr,
+            // }
+
+            return {
+                data: data.filter((item) => item.id !== id),
+            }
+        });
+    }
+
+    render() {
+        const {data} = this.state;
+        const {onDelete} = this;
+
+        return (
+            <div className="app font-monospace">
+                <div className="content">
+                    <AppInfo />
+                    <div className="search-panel">
+                        <SearchPanel />
+                        <AppFilter />
+                    </div>
+                    <MovieList data={data} onDelete={onDelete} />
+                    <MoviesAddForm />
                 </div>
-                <MovieList data={data} />
-                <MoviesAddForm />
             </div>
-        </div>
-    );
+        );
+    }
+
+    
 }
 
 export default App;
