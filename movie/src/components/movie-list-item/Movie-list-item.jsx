@@ -8,7 +8,6 @@ class MovieListItem extends Component {
     
     render() {
         const {name, viewers} = this.props;
-        const {favourite} = this.state;
 
         return (
             <li 
