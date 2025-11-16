@@ -4,8 +4,8 @@ import AppFilter from "../app-filter/App-filter";
 import MovieList from "../movie-list/Movie-list";
 import MoviesAddForm from "../movies-add-form/Movies-add-form";
 
-import './App.css';
 import { Component } from "react";
+import './App.css';
 
 class App extends Component {
     constructor(props) {
@@ -45,9 +45,15 @@ class App extends Component {
         });
     }
 
+    addForm = (item) => {
+        this.setState(({data}) => ({
+            data: [...data, item],
+        }));
+    }
+
     render() {
         const {data} = this.state;
-        const {onDelete} = this;
+        const {onDelete, addForm} = this;
 
         return (
             <div className="app font-monospace">
@@ -58,7 +64,7 @@ class App extends Component {
                         <AppFilter />
                     </div>
                     <MovieList data={data} onDelete={onDelete} />
-                    <MoviesAddForm />
+                    <MoviesAddForm addForm={addForm} />
                 </div>
             </div>
         );
