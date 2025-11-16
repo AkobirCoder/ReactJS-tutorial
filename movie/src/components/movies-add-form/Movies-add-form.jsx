@@ -1,18 +1,59 @@
+import { Component } from 'react';
 import './Movies-add-form.css';
 
-const MoviesAddForm = () => {
-    return (
-        <div className='movies-add-form'>
-            <h3>Yangi kino qo'shish</h3>
-            <form className='add-form d-flex'>
-                <input type="text" className='form-control mx-1 new-post-label' placeholder='Qanday kino?' />
-                <input type="number" className='form-control mx-1 new-post-label' placeholder="Nechi marotaba ko'rilgan?" />
-                <button className='btn btn-outline-dark ms-1' type='submit'>
-                    Qo'shish
-                </button>
-            </form>
-        </div>
-    );
+class MoviesAddForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '+998', // default qiymat
+            views: '999', // default qiymat
+        }
+    }
+
+    changeHandlerInput = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value,
+        });
+    }
+
+    render() {
+        const {name, views} = this.state;
+
+        return (
+            <div className='movies-add-form'>
+                <h3>Yangi kino qo'shish</h3>
+                <form className='add-form d-flex'>
+                    <input type="text" className='form-control mx-1 new-post-label' placeholder='Qanday kino?' 
+                        onChange={this.changeHandlerInput} name='name' value={name}
+                    />
+                    <input type="number" className='form-control mx-1 new-post-label' placeholder="Nechi marotaba ko'rilgan?" 
+                        onChange={this.changeHandlerInput} name='views' value={views}
+                    />
+                    <button className='btn btn-outline-dark ms-1' type='submit'>
+                        Qo'shish
+                    </button>
+                </form>
+            </div>
+        );
+    }
 }
 
+// const MoviesAddForm = () => {
+//     return (
+//         <div className='movies-add-form'>
+//             <h3>Yangi kino qo'shish</h3>
+//             <form className='add-form d-flex'>
+//                 <input type="text" className='form-control mx-1 new-post-label' placeholder='Qanday kino?' />
+//                 <input type="number" className='form-control mx-1 new-post-label' placeholder="Nechi marotaba ko'rilgan?" />
+//                 <button className='btn btn-outline-dark ms-1' type='submit'>
+//                     Qo'shish
+//                 </button>
+//             </form>
+//         </div>
+//     );
+// }
+
 export default MoviesAddForm;
+
+// Boshqarib bo'ladigan formalardagi qiymatlar `state` larda saqlanadi
+// Boshqarib bo'lmaydigan formalardagi qiymatlar `browser` da saqlanadi
