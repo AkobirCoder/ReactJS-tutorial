@@ -5,6 +5,8 @@ import MovieList from "../movie-list/Movie-list";
 import MoviesAddForm from "../movies-add-form/Movies-add-form";
 
 import { Component } from "react";
+import {v4 as uuidv4} from "uuid";
+
 import './App.css';
 
 class App extends Component {
@@ -47,7 +49,7 @@ class App extends Component {
 
     addForm = (item) => {
         this.setState(({data}) => ({
-            data: [...data, item],
+            data: [...data, {...item, id: uuidv4()}],
         }));
     }
 
