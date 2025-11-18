@@ -2,40 +2,10 @@ import { Component } from 'react';
 import './Movie-list-item.css';
 
 class MovieListItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            favourite: false,
-            like: false,
-        }
-    }
-
-    onFavourite = () => {
-        this.setState(({favourite}) => {
-            return {
-                favourite: !favourite,
-            }
-        });
-    }
-
-    // onLike = () => {
-    //     this.setState(({like}) => {
-    //         return {
-    //             like: !like,
-    //         }
-    //     });
-    // }
-
-    onLike = () => {
-        this.setState(({like}) => ({
-            like: !like,
-        }));
-    }
+    
     
     render() {
-        const {name, viewers, onDelete} = this.props;
-        const {favourite, like} = this.state;
-        const {onFavourite, onLike} = this; // onFavourite va onLike metodlarini destruktizatsiya qilish
+        
 
         return (
             <li 
