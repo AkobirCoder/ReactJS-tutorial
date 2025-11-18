@@ -2,10 +2,34 @@ import { Component } from 'react';
 import './Movie-list-item.css';
 
 class MovieListItem extends Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            favourite: false,
+            like: false,
+        }
+    }
+
+    onFavourite = () => {
+        this.setState(({favourite}) => {
+            return {
+                favourite: !favourite,
+            }
+        });
+    }
+
+    onLike = () => {
+        this.setState(({like}) => {
+            return {
+                like: !like,
+            }
+        });
+    }
     
     render() {
-        
+        const {name, viewers} = this.props;
+        const {favourite, like} = this.state;
+        const {onFavourite, onLike} = this;
 
         return (
             <li 
@@ -19,7 +43,7 @@ class MovieListItem extends Component {
                     <button className='btn-sm btn-cookie' type='button' onClick={onFavourite}>
                         <i className='fas fa-cookie'></i>
                     </button>
-                    <button className='btn-sm btn-trash' type='button' onClick={onDelete}>
+                    <button className='btn-sm btn-trash' type='button'>
                         <i className='fas fa-trash'></i>
                     </button>
                     <i className='fas fa-star'></i>
