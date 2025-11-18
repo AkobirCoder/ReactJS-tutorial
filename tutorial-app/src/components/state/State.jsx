@@ -51,7 +51,9 @@ class StateSecond extends Component {
 
     // 3-usuli: Arrow funtion
 
-    changeHandlerInput = (e) => {
+    changeHandlerInput = (e, name) => {
+        console.log(name);
+
         this.setState({
             age: e.target.value,
         });
@@ -60,7 +62,7 @@ class StateSecond extends Component {
     render() {
         const {ism, familiya, havola} = this.props;
         const {counter, age} = this.state;
-        const {changeHandlerInput} = this;
+        const {onIncrement, changeHandlerInput} = this;
 
         return(
             <div className="cards">
@@ -70,7 +72,7 @@ class StateSecond extends Component {
                         <a href={havola} target="_blank" rel="noreferrer">Mening shaxsiy kanalim</a>
                         {/* <p>{text}</p> */}
                         <div className="card-buttons">
-                            <button onClick={this.onIncrement} className="btn btn-inc">Increment</button>
+                            <button onClick={onIncrement} className="btn btn-inc">Increment</button>
                             <button onClick={() => this.onDecrement()} className="btn btn-dec">Decrement</button> {/* context this ni bog'lashning 2-usuli */}
                             <button onClick={this.onRestart} className="btn btn-res">Restart</button>
                         </div>
@@ -82,7 +84,7 @@ class StateSecond extends Component {
                 </div>
                 <form>
                     <span>Yoshingiz:</span>
-                    <input type="text" onChange={changeHandlerInput} />
+                    <input type="text" onChange={(e) => changeHandlerInput(e, 'Akobir')} /> {/* `state` dagi metodga argumentiga parameter berish */}
                 </form>
             </div>  
         );
