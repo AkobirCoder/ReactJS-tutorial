@@ -94,8 +94,6 @@ class UserSecond extends Component {
     render() {
         const {name, surname, link, age} = this.props;
 
-        console.log(this.props);
-
         return(
             <div
                 style={{
