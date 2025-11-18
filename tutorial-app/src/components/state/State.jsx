@@ -51,15 +51,7 @@ class StateSecond extends Component {
 
     // 3-usuli: Arrow funtion
 
-    changeHandler = (event, name) => {
-        console.log(name);
-
-        this.setState(() => {
-            return {
-                age: event.target.value,
-            }
-        });
-    }
+    
 
     render() {
         const {ism, familiya, havola} = this.props;
@@ -83,10 +75,7 @@ class StateSecond extends Component {
                         <p>{counter}</p>
                     </div>
                 </div>
-                <form>
-                    <span>Yoshingiz:</span>
-                    <input type="text" onChange={(event) => this.changeHandler(event, 'Akobir')} />
-                </form>
+                
             </div>
         );
     }
