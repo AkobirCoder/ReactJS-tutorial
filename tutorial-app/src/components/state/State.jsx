@@ -51,11 +51,16 @@ class StateSecond extends Component {
 
     // 3-usuli: Arrow funtion
 
-    
+    changeHandlerInput = (e) => {
+        this.setState({
+            age: e.target.value,
+        });
+    }
 
     render() {
         const {ism, familiya, havola} = this.props;
         const {counter, age} = this.state;
+        const {changeHandlerInput} = this;
 
         return(
             <div className="cards">
@@ -75,8 +80,11 @@ class StateSecond extends Component {
                         <p>{counter}</p>
                     </div>
                 </div>
-                
-            </div>
+                <form>
+                    <span>Yoshingiz:</span>
+                    <input type="text" onChange={changeHandlerInput} />
+                </form>
+            </div>  
         );
     }
 }
