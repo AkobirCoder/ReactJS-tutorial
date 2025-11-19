@@ -24,17 +24,31 @@ class App extends Component {
 
         // Mutable:
 
-        this.setState(({data}) => {
-            const index = data.findIndex(item => item.id !== id);
-            data.splice(index, 1);
+        // this.setState(({data}) => {
+        //     const index = data.findIndex(item => item.id !== id);
+        //     data.splice(index, 1);
 
-            return {
-                data,
-            }
-        });
+        //     return {
+        //         data,
+        //     }
+        // });
 
 
         // Immutable:
+
+        this.setState(({data}) => {
+            // const newArray = data.filter((item) => {
+            //     return item.id !== id;
+            // });
+
+            // return {
+            //     data: newArray,
+            // }
+
+            return {
+                data: data.filter(item => item.id !== id),
+            }
+        });
     }
 
     render() {
