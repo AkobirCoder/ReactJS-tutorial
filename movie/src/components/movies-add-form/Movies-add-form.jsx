@@ -17,13 +17,14 @@ class MoviesAddForm extends Component {
     }
 
     render() {
+        const {addForm} = this.props;
         const {name, views} = this.state;
         const {changeHandlerInput} = this;
 
         return (
             <div className='movies-add-form'>
                 <h3>Yangi kino qo'shish</h3>
-                <form className='add-form d-flex'>
+                <form className='add-form d-flex' onSubmit={(e) => addForm(e, {name: name, viewers: views})}>
                     <input type="text" className='form-control mx-1 new-post-label' placeholder='Qanday kino?' 
                         onChange={changeHandlerInput} name='name' value={name}
                     />
