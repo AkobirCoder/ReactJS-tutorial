@@ -5,6 +5,7 @@ import MovieList from "../movie-list/Movie-list";
 import MoviesAddForm from "../movies-add-form/Movies-add-form";
 
 import { Component } from "react";
+import {v4 as uuidv4} from "uuid";
 
 import './App.css';
 
@@ -51,9 +52,25 @@ class App extends Component {
         });
     }
 
+    addForm = (e, item) => {
+        e.preventDefault();
+        
+        this.setState(({data}) => {
+            // const newArray = [...data, {...item, id: uuidv4()}];
+
+            // return {
+            //     data: newArray,
+            // }
+
+            return {
+                data: [...data, {...item, id: uuidv4()}],
+            }
+        });
+    }
+
     render() {
         const {data} = this.state;
-        const {onDelete} = this;
+        const {onDelete, addForm} = this;
 
         return (
             <div className="app font-monospace">
@@ -64,7 +81,7 @@ class App extends Component {
                         <AppFilter />
                     </div>
                     <MovieList data={data} onDelete={onDelete} />
-                    <MoviesAddForm />
+                    <MoviesAddForm addForm={addForm} />
                 </div>
             </div>
         );
