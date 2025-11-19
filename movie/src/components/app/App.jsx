@@ -52,9 +52,7 @@ class App extends Component {
         });
     }
 
-    addForm = (e, item) => {
-        e.preventDefault();
-        
+    addForm = (item) => {
         this.setState(({data}) => {
             // const newArray = [...data, {...item, id: uuidv4()}];
 
