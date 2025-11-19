@@ -20,8 +20,26 @@ class App extends Component {
         }
     }
 
+    onDelete = (id) => {
+
+        // Mutable:
+
+        this.setState(({data}) => {
+            const index = data.findIndex(item => item.id !== id);
+            data.splice(index, 1);
+
+            return {
+                data,
+            }
+        });
+
+
+        // Immutable:
+    }
+
     render() {
         const {data} = this.state;
+        const {onDelete} = this;
 
         return (
             <div className="app font-monospace">
@@ -31,15 +49,12 @@ class App extends Component {
                         <SearchPanel />
                         <AppFilter />
                     </div>
-                    <MovieList data={data} />
+                    <MovieList data={data} onDelete={onDelete} />
                     <MoviesAddForm />
                 </div>
             </div>
         );
     }
-
-    
 }
 
 export default App;
-
