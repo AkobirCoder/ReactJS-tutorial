@@ -5,7 +5,6 @@ import MovieList from "../movie-list/Movie-list";
 import MoviesAddForm from "../movies-add-form/Movies-add-form";
 
 import { Component } from "react";
-import {v4 as uuidv4} from "uuid";
 
 import './App.css';
 
@@ -21,41 +20,8 @@ class App extends Component {
         }
     }
 
-    onDelete = (id) => {
-        this.setState(({data}) => {
-
-            // Mutable:
-
-            // const index = data.findIndex(c => c.id !== id);
-
-            // data.splice(index, 1);
-
-
-            // Immutable:
-
-            // const newArr = data.filter((item) => {
-            //     return item.id !== id;
-            // });
-
-            // return {
-            //     data: newArr,
-            // }
-
-            return {
-                data: data.filter((item) => item.id !== id),
-            }
-        });
-    }
-
-    addForm = (item) => {
-        this.setState(({data}) => ({
-            data: [...data, {...item, id: uuidv4()}],
-        }));
-    }
-
     render() {
         const {data} = this.state;
-        const {onDelete, addForm} = this;
 
         return (
             <div className="app font-monospace">
@@ -65,8 +31,8 @@ class App extends Component {
                         <SearchPanel />
                         <AppFilter />
                     </div>
-                    <MovieList data={data} onDelete={onDelete} />
-                    <MoviesAddForm addForm={addForm} />
+                    <MovieList data={data} />
+                    <MoviesAddForm />
                 </div>
             </div>
         );
