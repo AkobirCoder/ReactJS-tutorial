@@ -5,7 +5,7 @@ class MoviesAddForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '+998()-', // inputga value atributi orqali berilsa default qiymat browserda ko'rinadi
+            name: '', // inputga value atributi orqali berilsa default qiymat browserda ko'rinadi
             views: '', // inputga value atributi orqali berilsa default qiymat browserda ko'rinadi
         }
     }
