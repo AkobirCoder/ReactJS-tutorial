@@ -14,11 +14,13 @@ class App extends Component {
         super(props);
         this.state = {
             data: [
-                { name: "Empire of Osman", viewers: 988, favourite: false, id: 1, },
-                { name: "Ertugrul", viewers: 789, favourite: false, id: 2, },
-                { name: "Omar", viewers: 1091, favourite: true, id: 3, },
+                { name: "Empire of Osman", viewers: 988, favourite: false, like: false, id: 1, },
+                { name: "Ertugrul", viewers: 789, favourite: false, like: true, id: 2, },
+                { name: "Omar", viewers: 1091, favourite: true, like: false, id: 3, },
             ],
         }
+
+        // this.maxId = 4;
     }
 
     onDelete = (id) => {
@@ -53,6 +55,10 @@ class App extends Component {
     }
 
     addForm = (item) => {
+        // const newItem = {name: item.name, viewers: item.viewers, id: this.maxId++}
+
+        const newItem = {name: item.name, viewers: item.viewers, id: uuidv4(), favourite: false, like: false}
+
         this.setState(({data}) => {
             // const newArray = [...data, {...item, id: uuidv4()}];
 
@@ -61,7 +67,9 @@ class App extends Component {
             // }
 
             return {
-                data: [...data, {...item, id: uuidv4()}],
+                // data: [...data, {...item, id: uuidv4()}],
+
+                data: [...data, newItem],
             }
         });
     }
