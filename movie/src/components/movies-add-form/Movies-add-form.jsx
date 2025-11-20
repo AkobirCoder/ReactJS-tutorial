@@ -6,7 +6,7 @@ class MoviesAddForm extends Component {
         super(props);
         this.state = {
             name: '', // inputga value atributi orqali berilsa default qiymat browserda ko'rinadi
-            views: '', // inputga value atributi orqali berilsa default qiymat browserda ko'rinadi
+            viewers: '', // inputga value atributi orqali berilsa default qiymat browserda ko'rinadi
         }
     }
 
@@ -20,18 +20,18 @@ class MoviesAddForm extends Component {
         e.preventDefault();
 
         const {addForm} = this.props;
-        const {name, views} = this.state;
+        const {name, viewers} = this.state;
 
-        addForm({name: name, viewers: views});
+        addForm({name, viewers});
 
         this.setState({
             name: '',
-            views: '',
+            viewers: '',
         });
     }
 
     render() {
-        const {name, views} = this.state;
+        const {name, viewers} = this.state;
         const {changeHandlerInput, addFormHandler} = this;
 
         return (
@@ -42,7 +42,7 @@ class MoviesAddForm extends Component {
                         onChange={changeHandlerInput} name='name' value={name}
                     />
                     <input type="number" className='form-control mx-1 new-post-label' placeholder="Nechi marotaba ko'rilgan?" 
-                        onChange={changeHandlerInput} name='views' value={views}
+                        onChange={changeHandlerInput} name='viewers' value={viewers}
                     />
                     <button className='btn btn-outline-dark ms-1' type='submit'>
                         Qo'shish
