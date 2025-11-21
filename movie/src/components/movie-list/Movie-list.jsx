@@ -12,14 +12,22 @@ class MovieList extends Component {
     }
 
     render() {
-        const {data, onDelete} = this.props;
+        const {data, onDelete, onToggleFavourite, onToggleLike} = this.props;
         // console.log(data);
 
         return (
             <ul className='movie-list'>
                 {
                     data.map(item => (
-                        <MovieListItem key={item.id} name={item.name} viewers={item.viewers} favourite={item.favourite} onDelete={() => onDelete(item.id)} />
+                        <MovieListItem 
+                            key={item.id} 
+                            name={item.name} 
+                            viewers={item.viewers} 
+                            favourite={item.favourite} 
+                            onDelete={() => onDelete(item.id)}
+                            onToggleFavourite={() => onToggleFavourite(item.id)}
+                            onToggleLike={() => onToggleLike(item.id)}
+                        />
                         // <MovieListItem {...item} />
                     ))
                 }
