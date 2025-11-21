@@ -24,6 +24,7 @@ class MovieList extends Component {
                             name={item.name} 
                             viewers={item.viewers} 
                             favourite={item.favourite} 
+                            like={item.like}
                             onDelete={() => onDelete(item.id)}
                             onToggleFavourite={() => onToggleFavourite(item.id)}
                             onToggleLike={() => onToggleLike(item.id)}
