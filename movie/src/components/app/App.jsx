@@ -102,9 +102,9 @@ class App extends Component {
 
         // Ternary operator:
 
-        this.setState(({data}) => ({
-            data: data.map((item) => item.id === id ? {...item, favourite: !item.favourite} : item),
-        }));
+        // this.setState(({data}) => ({
+        //     data: data.map((item) => item.id === id ? {...item, favourite: !item.favourite} : item),
+        // }));
     }
 
     onToggleLike = (id) => {
@@ -135,14 +135,30 @@ class App extends Component {
 
         // Ternary operator:
 
+        // this.setState(({data}) => ({
+        //     data: data.map((item) => item.id === id ? {...item, like: !item.like} : item),
+        // }));
+    }
+    
+
+    onToggleProp = (id, prop) => {
+        console.log(prop);
+
         this.setState(({data}) => ({
-            data: data.map((item) => item.id === id ? {...item, like: !item.like} : item),
+            data: data.map((item) => {
+                if (item.id === id) {
+                    return {...item, [prop]: ![prop].favourite}
+                }
+
+                return item;
+            }),
         }));
     }
 
     render() {
         const {data} = this.state;
-        const {onDelete, addForm, onToggleFavourite, onToggleLike} = this;
+        // const {onDelete, addForm, onToggleFavourite, onToggleLike} = this;
+        const {onDelete, addForm, onToggleProp} = this;
 
         return (
             <div className="app font-monospace">
@@ -152,7 +168,8 @@ class App extends Component {
                         <SearchPanel />
                         <AppFilter />
                     </div>
-                    <MovieList data={data} onDelete={onDelete} onToggleFavourite={onToggleFavourite} onToggleLike={onToggleLike} />
+                    {/* <MovieList data={data} onDelete={onDelete} onToggleFavourite={onToggleFavourite} onToggleLike={onToggleLike} /> */}
+                    <MovieList data={data} onDelete={onDelete} onToggleProp={onToggleProp} />
                     <MoviesAddForm addForm={addForm} />
                 </div>
             </div>
