@@ -142,7 +142,7 @@ class App extends Component {
     
 
     onToggleProp = (id, prop) => {
-        console.log(prop);
+        // console.log(prop);
 
         this.setState(({data}) => ({
             data: data.map((item) => {
