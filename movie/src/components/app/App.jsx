@@ -159,11 +159,13 @@ class App extends Component {
         const {data} = this.state;
         // const {onDelete, addForm, onToggleFavourite, onToggleLike} = this;
         const {onDelete, addForm, onToggleProp} = this;
+        const allMoviesCount = data.length;
+        const favouriteMoviesCount = data.filter((item) => item.favourite).length;
 
         return (
             <div className="app font-monospace">
                 <div className="content">
-                    <AppInfo />
+                    <AppInfo allMoviesCount={allMoviesCount} favouriteMoviesCount={favouriteMoviesCount} />
                     <div className="search-panel">
                         <SearchPanel />
                         <AppFilter />
