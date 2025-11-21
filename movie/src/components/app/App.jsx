@@ -88,16 +88,23 @@ class App extends Component {
             //     data: newArray,
             // }
 
-            return {
-                data: data.map((item) => {
-                    if (item.id === id) {
-                        return {...item, favourite: !item.favourite}
-                    } else {
-                        return item;
-                    }
-                }),
-            }
+            // return {
+            //     data: data.map((item) => {
+            //         if (item.id === id) {
+            //             return {...item, favourite: !item.favourite}
+            //         } else {
+            //             return item;
+            //         }
+            //     }),
+            // }
         });
+
+
+        // Ternary operator:
+
+        this.setState(({data}) => ({
+            data: data.map((item) => item.id === id ? {...item, favourite: !item.favourite} : item),
+        }));
     }
 
     onToggleLike = (id) => {
@@ -114,16 +121,23 @@ class App extends Component {
             //     data: newArray,
             // }
 
-            return {
-                data: data.map((item) => {
-                    if (item.id === id) {
-                        return {...item, like: !item.like}
-                    } else {
-                        return item;
-                    }
-                }),
-            }
+            // return {
+            //     data: data.map((item) => {
+            //         if (item.id === id) {
+            //             return {...item, like: !item.like}
+            //         } else {
+            //             return item;
+            //         }
+            //     }),
+            // }
         });
+
+
+        // Ternary operator:
+
+        this.setState(({data}) => ({
+            data: data.map((item) => item.id === id ? {...item, like: !item.like} : item),
+        }))
     }
 
     render() {
