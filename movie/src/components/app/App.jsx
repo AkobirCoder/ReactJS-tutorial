@@ -15,8 +15,8 @@ class App extends Component {
         this.state = {
             data: [
                 { name: "Empire of Osman", viewers: 988, favourite: false, like: false, id: 1, },
-                { name: "Ertugrul", viewers: 789, favourite: false, like: true, id: 2, },
-                { name: "Omar", viewers: 1091, favourite: true, like: false, id: 3, },
+                { name: "Ertugrul", viewers: 789, favourite: false, like: false, id: 2, },
+                { name: "Omar", viewers: 1091, favourite: false, like: false, id: 3, },
             ],
         }
 
@@ -76,34 +76,54 @@ class App extends Component {
 
     onToggleFavourite = (id) => {
         this.setState(({data}) => {
-            const newArray = data.map((item) => {
-                if (item.id === id) {
-                    return {...item, favourite: !item.favourite}
-                }
+            // const newArray = data.map((item) => {
+            //     if (item.id === id) {
+            //         return {...item, favourite: !item.favourite}
+            //     }
 
-                return item;
-            });
+            //     return item;
+            // });
+
+            // return {
+            //     data: newArray,
+            // }
 
             return {
-                data: newArray,
+                data: data.map((item) => {
+                    if (item.id === id) {
+                        return {...item, favourite: !item.favourite}
+                    } else {
+                        return item;
+                    }
+                }),
             }
         });
     }
 
     onToggleLike = (id) => {
         this.setState(({data}) => {
-            const newArray = data.map((item) => {
-                if (item.id === id) {
-                    return {...item, like: !item.like}
-                }
+            // const newArray = data.map((item) => {
+            //     if (item.id === id) {
+            //         return {...item, like: !item.like}
+            //     }
 
-                return item;
-            });
+            //     return item;
+            // });
         
+            // return {
+            //     data: newArray,
+            // }
+
             return {
-                data: newArray,
+                data: data.map((item) => {
+                    if (item.id === id) {
+                        return {...item, like: !item.like}
+                    } else {
+                        return item;
+                    }
+                }),
             }
-        })
+        });
     }
 
     render() {
