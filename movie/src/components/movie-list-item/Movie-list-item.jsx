@@ -27,8 +27,8 @@ class MovieListItem extends Component {
     }
     
     render() {
-        const {name, viewers, onDelete, onToggleFavourite, onToggleLike} = this.props;
-        const {favourite, like} = this.state;
+        const {name, viewers, favourite, like, onDelete, onToggleFavourite, onToggleLike} = this.props;
+        // const {favourite, like} = this.state;
         // const {onFavourite, onLike} = this;
 
         return (
