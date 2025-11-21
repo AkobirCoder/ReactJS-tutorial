@@ -74,9 +74,17 @@ class App extends Component {
         });
     }
 
+    onToggleFavourite = (id) => {
+        console.log(`Favourite ${id}`);
+    }
+
+    onToggleLike = (id) => {
+        console.log(`Like ${id}`);
+    }
+
     render() {
         const {data} = this.state;
-        const {onDelete, addForm} = this;
+        const {onDelete, addForm, onToggleFavourite, onToggleLike} = this;
 
         return (
             <div className="app font-monospace">
@@ -86,7 +94,7 @@ class App extends Component {
                         <SearchPanel />
                         <AppFilter />
                     </div>
-                    <MovieList data={data} onDelete={onDelete} />
+                    <MovieList data={data} onDelete={onDelete} onToggleFavourite={onToggleFavourite} onToggleLike={onToggleLike} />
                     <MoviesAddForm addForm={addForm} />
                 </div>
             </div>
