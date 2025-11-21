@@ -137,7 +137,7 @@ class App extends Component {
 
         this.setState(({data}) => ({
             data: data.map((item) => item.id === id ? {...item, like: !item.like} : item),
-        }))
+        }));
     }
 
     render() {
