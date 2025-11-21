@@ -12,7 +12,8 @@ class MovieList extends Component {
     }
 
     render() {
-        const {data, onDelete, onToggleFavourite, onToggleLike} = this.props;
+        // const {data, onDelete, onToggleFavourite, onToggleLike} = this.props;
+        const {data, onDelete, onToggleProp} = this.props;
         // console.log(data);
 
         return (
@@ -26,8 +27,9 @@ class MovieList extends Component {
                             favourite={item.favourite} 
                             like={item.like}
                             onDelete={() => onDelete(item.id)}
-                            onToggleFavourite={() => onToggleFavourite(item.id)}
-                            onToggleLike={() => onToggleLike(item.id)}
+                            // onToggleFavourite={() => onToggleFavourite(item.id)}
+                            // onToggleLike={() => onToggleLike(item.id)}
+                            onToggleProp={(e) => onToggleProp(item.id, e.currentTarget.getAttribute('data-toggle'))}
                         />
                         // <MovieListItem {...item} />
                     ))
