@@ -1,4 +1,4 @@
-import { Component, StrictMode } from 'react';
+import { Component, Fragment, StrictMode } from 'react';
 
 import { Header, Navbar } from '../header/Header';
 import Field from '../field/Field';
@@ -162,42 +162,42 @@ class State extends Component {
 
 
 function App() {
-  return (
-    <div className='App'>
-        <StrictMode>
-            <Header />
-        </StrictMode>
-        <Navbar/>
-        <Field />
-        <Button />
+    return (
+        <div className='App'>
+            <StrictMode>
+                <Header />
+            </StrictMode>
+            <Navbar/>
+            <Field />
+            <Button />
 
-        {/* Component xususiyatlari */}
-        <User firstName={{name: "Akobir"}} lastName={() => "Usmonov"} link="https://youtube.com" />
-        <User firstName={{name: "Umar"}} lastName={() => "Shamsiyev"} link="https://google.com" />
-        <User firstName={{name: "Kamron"}} lastName={() => "Ismoilov"} link={"https://facebook.com"} />
-        <User firstName={{name: "Alibek"}} lastName={() => "Hakimov"} link={"https://telegram.org"} />
+            {/* Component xususiyatlari */}
+            <User firstName={{name: "Akobir"}} lastName={() => "Usmonov"} link="https://youtube.com" />
+            <User firstName={{name: "Umar"}} lastName={() => "Shamsiyev"} link="https://google.com" />
+            <User firstName={{name: "Kamron"}} lastName={() => "Ismoilov"} link={"https://facebook.com"} />
+            <User firstName={{name: "Alibek"}} lastName={() => "Hakimov"} link={"https://telegram.org"} />
 
-        {/* Class component xususiyatlari */}
-        <UserSecond name={"Alex"} surname={"Bush"} link={"https://telegram.org"} age={41} />
+            {/* Class component xususiyatlari */}
+            <UserSecond name={"Alex"} surname={"Bush"} link={"https://telegram.org"} age={41} />
 
-        {/* States */}
-        <State />
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "space-evenly",
-                gap: "1rem",
-                border: "2px solid black",
-                margin: "1.5rem 2rem",
-                borderRadius: "1rem"
-            }}
-        >
-            <StateSecond ism={"Akobir"} familiya={"Usmonov"} havola={"https://youtube.com"} />
-            <StateSecond ism={"Mashhurbek"} familiya={"Nasrullayev"} havola={"https://github.com"} />
-            <StateSecond ism={"Diyorbek"} familiya={"Ne'matov"} havola={"https://microsoft.com"} />
+            {/* States */}
+            <State />
+            <Fragment
+                style={{
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                    gap: "1rem",
+                    border: "2px solid black",
+                    margin: "1.5rem 2rem",
+                    borderRadius: "1rem"
+                }}
+            >
+                <StateSecond ism={"Akobir"} familiya={"Usmonov"} havola={"https://youtube.com"} />
+                <StateSecond ism={"Mashhurbek"} familiya={"Nasrullayev"} havola={"https://github.com"} />
+                <StateSecond ism={"Diyorbek"} familiya={"Ne'matov"} havola={"https://microsoft.com"} />
+            </Fragment>
         </div>
-    </div>
-  );
+    );
 }
 
 export default App;
