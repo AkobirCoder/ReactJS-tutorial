@@ -19,10 +19,11 @@ class App extends Component {
                 { name: "Omar", viewers: 1091, favourite: false, like: false, id: 3, },
             ],
 
-
             // Search-paneldagi inputning qiymatini saqlab turuvchi state:
-
             term: '',
+
+            // App-filterdagi filter qiluvchi buttonlar uchun state:
+            filter: 'all',
         }
 
         // this.maxId = 4;
@@ -180,13 +181,32 @@ class App extends Component {
         this.setState({term});
     }
 
+    filterHandler = (array, filter) => {
+        switch (filter) {
+            case 'popular':
+                return array.filter((item) => {
+                    return item.like;
+                });
+            case 'mostViewers':
+                return array.filter((item) => {
+                    return item.viewers > 800;
+                });
+            default:
+                return array;
+        }
+    }
+
+    updateFilterHandler = (filter) => {
+        this.setState({filter});
+    }
+
     render() {
-        const {data, term} = this.state;
+        const {data, term, filter} = this.state;
         // const {onDelete, addForm, onToggleFavourite, onToggleLike} = this;
-        const {onDelete, addForm, onToggleProp, searchHandler, updateTermHandler} = this;
+        const {onDelete, addForm, onToggleProp, searchHandler, updateTermHandler, filterHandler, updateFilterHandler} = this;
         const allMoviesCount = data.length;
         const favouriteMoviesCount = data.filter((item) => item.favourite).length;
-        const visibleData = searchHandler(data, term);
+        const visibleData = filterHandler(searchHandler(data, term), filter);
 
         return (
             <div className="app font-monospace">
@@ -194,7 +214,7 @@ class App extends Component {
                     <AppInfo allMoviesCount={allMoviesCount} favouriteMoviesCount={favouriteMoviesCount} />
                     <div className="search-panel">
                         <SearchPanel updateTermHandler={updateTermHandler} />
-                        <AppFilter />
+                        <AppFilter filter={filter} updateFilterHandler={updateFilterHandler} />
                     </div>
                     {/* <MovieList data={data} onDelete={onDelete} onToggleFavourite={onToggleFavourite} onToggleLike={onToggleLike} /> */}
                     {/* <MovieList data={data} onDelete={onDelete} onToggleProp={onToggleProp} /> */}
