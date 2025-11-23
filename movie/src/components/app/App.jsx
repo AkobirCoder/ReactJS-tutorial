@@ -169,11 +169,11 @@ class App extends Component {
     searchHandler = (array, term) => {
         if (term.length === 0) {
             return array;
-        } else {
-            return array.filter((item) => {
-                return item.name.toLowerCase().indexOf(term) > -1;
-            });
         }
+
+        return array.filter((item) => {
+            return item.name.toLowerCase().indexOf(term) > -1;
+        });
     }
 
     updateTermHandler = (term) => {
