@@ -18,6 +18,11 @@ class App extends Component {
                 { name: "Ertugrul", viewers: 789, favourite: false, like: false, id: 2, },
                 { name: "Omar", viewers: 1091, favourite: false, like: false, id: 3, },
             ],
+
+
+            // Search-paneldagi inputning qiymatini saqlab turuvchi state:
+
+            term: '',
         }
 
         // this.maxId = 4;
@@ -160,24 +165,40 @@ class App extends Component {
             }),
         }));
     }
+    
+    searchHandler = (array, term) => {
+        if (term.length === 0) {
+            return array;
+        } else {
+            return array.filter((item) => {
+                return item.name.toLowerCase().indexOf(term) > -1;
+            });
+        }
+    }
+
+    updateTermHandler = (term) => {
+        this.setState({term});
+    }
 
     render() {
-        const {data} = this.state;
+        const {data, term} = this.state;
         // const {onDelete, addForm, onToggleFavourite, onToggleLike} = this;
-        const {onDelete, addForm, onToggleProp} = this;
+        const {onDelete, addForm, onToggleProp, searchHandler, updateTermHandler} = this;
         const allMoviesCount = data.length;
         const favouriteMoviesCount = data.filter((item) => item.favourite).length;
+        const visibleData = searchHandler(data, term);
 
         return (
             <div className="app font-monospace">
                 <div className="content">
                     <AppInfo allMoviesCount={allMoviesCount} favouriteMoviesCount={favouriteMoviesCount} />
                     <div className="search-panel">
-                        <SearchPanel />
+                        <SearchPanel updateTermHandler={updateTermHandler} />
                         <AppFilter />
                     </div>
                     {/* <MovieList data={data} onDelete={onDelete} onToggleFavourite={onToggleFavourite} onToggleLike={onToggleLike} /> */}
-                    <MovieList data={data} onDelete={onDelete} onToggleProp={onToggleProp} />
+                    {/* <MovieList data={data} onDelete={onDelete} onToggleProp={onToggleProp} /> */}
+                    <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
                     <MoviesAddForm addForm={addForm} />
                 </div>
             </div>
