@@ -24,6 +24,9 @@ class App extends Component {
 
             // App-filterdagi filter qiluvchi buttonlar uchun state:
             filter: 'all',
+
+            errorMessage: '',
+            noResultsMessage: '',
         }
 
         // this.maxId = 4;
@@ -188,14 +191,6 @@ class App extends Component {
             return array;
         }
 
-        const result = array.filter(item => {
-            return item.name.toLowerCase().includes(term.toLowerCase());
-        });
-
-        if (result.length === 0) {
-            console.log('Kino mavjud emas');
-        }
-
         return array.filter((item) => {
             return item.name.toLowerCase().indexOf(term) > -1;
         });
@@ -230,7 +225,9 @@ class App extends Component {
         const {onDelete, addForm, onToggleProp, searchHandler, updateTermHandler, filterHandler, updateFilterHandler} = this;
         const allMoviesCount = data.length;
         const favouriteMoviesCount = data.filter((item) => item.favourite).length;
-        const visibleData = filterHandler(searchHandler(data, term), filter);
+        const filteredByData = searchHandler(data, term);
+        const visibleData = filterHandler(filteredByData, filter);
+        const finalNoResultMessage = filteredByData.length === 0 && term ? 'Kino mavjud emas' : '';
 
         return (
             <div className="app font-monospace" onClick={() => this.setState({errorMessage: ''})}>
@@ -253,7 +250,11 @@ class App extends Component {
                     </div>
                     {/* <MovieList data={data} onDelete={onDelete} onToggleFavourite={onToggleFavourite} onToggleLike={onToggleLike} /> */}
                     {/* <MovieList data={data} onDelete={onDelete} onToggleProp={onToggleProp} /> */}
-                    <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                    {finalNoResultMessage && filteredByData.length === 0 ? (
+                        <div className="fs-4">{finalNoResultMessage}</div>
+                    ) : <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                    } {/* Mana shuni to'g'irlab stil bergin */}
+                    
                     <MoviesAddForm addForm={addForm} />
                 </div>
             </div>
