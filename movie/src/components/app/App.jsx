@@ -66,7 +66,23 @@ class App extends Component {
         const newItem = {name: item.name, viewers: item.viewers, id: uuidv4(), favourite: false, like: false}
 
         if (!item.name || !item.viewers) {
-            alert("Iltimos kino kiriting");
+            // alert("Iltimos kino kiriting");
+
+            // return;
+
+            this.setState(() => {
+                return {
+                    errorMessage: 'Iltimos kino kiriting',
+                }
+            });
+
+            setTimeout(() => {
+                this.setState(() => {
+                    return {
+                        errorMessage: '',
+                    }
+                });
+            }, 6000);
 
             return;
         }
@@ -172,6 +188,14 @@ class App extends Component {
             return array;
         }
 
+        const result = array.filter(item => {
+            return item.name.toLowerCase().includes(term.toLowerCase());
+        });
+
+        if (result.length === 0) {
+            console.log('Kino mavjud emas');
+        }
+
         return array.filter((item) => {
             return item.name.toLowerCase().indexOf(term) > -1;
         });
@@ -201,7 +225,7 @@ class App extends Component {
     }
 
     render() {
-        const {data, term, filter} = this.state;
+        const {data, term, filter, errorMessage} = this.state;
         // const {onDelete, addForm, onToggleFavourite, onToggleLike} = this;
         const {onDelete, addForm, onToggleProp, searchHandler, updateTermHandler, filterHandler, updateFilterHandler} = this;
         const allMoviesCount = data.length;
@@ -209,7 +233,18 @@ class App extends Component {
         const visibleData = filterHandler(searchHandler(data, term), filter);
 
         return (
-            <div className="app font-monospace">
+            <div className="app font-monospace" onClick={() => this.setState({errorMessage: ''})}>
+                <div className={`error-message ${errorMessage ? 'd-flex' : 'd-none'}`}>
+                    {errorMessage && 
+                        <div className="fs-4 message" onClick={(e) => e.stopPropagation()}>
+                            <i 
+                                className="fa-solid fa-x fs-6 text-white" 
+                                onClick={() => this.setState({errorMessage: ''})}
+                            ></i>
+                            {errorMessage}
+                        </div>
+                    }
+                </div>
                 <div className="content">
                     <AppInfo allMoviesCount={allMoviesCount} favouriteMoviesCount={favouriteMoviesCount} />
                     <div className="search-panel">
