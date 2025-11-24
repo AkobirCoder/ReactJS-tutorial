@@ -26,7 +26,6 @@ class App extends Component {
             filter: 'all',
 
             errorMessage: '',
-            noResultsMessage: '',
         }
 
         // this.maxId = 4;
@@ -227,7 +226,7 @@ class App extends Component {
         const favouriteMoviesCount = data.filter((item) => item.favourite).length;
         const filteredByData = searchHandler(data, term);
         const visibleData = filterHandler(filteredByData, filter);
-        const finalNoResultMessage = filteredByData.length === 0 && term ? 'Kino mavjud emas' : '';
+        const finalNoResultMessage = filteredByData.length === 0 && term ? "Kino mavjud emas, iltimos to'g'ri nom kiriting" : "";
 
         return (
             <div className="app font-monospace" onClick={() => this.setState({errorMessage: ''})}>
@@ -250,10 +249,11 @@ class App extends Component {
                     </div>
                     {/* <MovieList data={data} onDelete={onDelete} onToggleFavourite={onToggleFavourite} onToggleLike={onToggleLike} /> */}
                     {/* <MovieList data={data} onDelete={onDelete} onToggleProp={onToggleProp} /> */}
-                    {finalNoResultMessage && filteredByData.length === 0 ? (
-                        <div className="fs-4">{finalNoResultMessage}</div>
-                    ) : <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
-                    } {/* Mana shuni to'g'irlab stil bergin */}
+                    {
+                        finalNoResultMessage && filteredByData.length === 0 
+                        ? (<div className="fs-5 result-message">{finalNoResultMessage}</div>) 
+                        : <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                    }
                     
                     <MoviesAddForm addForm={addForm} />
                 </div>
