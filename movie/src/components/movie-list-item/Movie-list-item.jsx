@@ -1,5 +1,5 @@
 // import { Component } from 'react';
-import './Movie-list-item.css';
+import './Movie-list-item.scss';
 
 // class MovieListItem extends Component {
 //     constructor(props) {
