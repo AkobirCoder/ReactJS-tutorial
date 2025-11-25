@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import './Movies-add-form.css';
+import './Movies-add-form.scss';
 
 class MoviesAddForm extends Component {
     constructor(props) {
