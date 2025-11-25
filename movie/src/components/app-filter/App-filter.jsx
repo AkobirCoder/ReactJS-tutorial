@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import './App-filter.css'
+import './App-filter.scss'
 
 class AppFilter extends Component {
     constructor(props) {
