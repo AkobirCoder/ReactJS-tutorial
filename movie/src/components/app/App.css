@@ -33,15 +33,7 @@
 .message {
     position: relative;
     padding: 3rem 4.5rem;
-    background-color: #fcfaf5;
-    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
-    border-radius: 0.25rem;
-}
-
-.message {
-    position: relative;
-    padding: 3rem 4.5rem;
-    background-color: #fcfaf5;
+    background-color: #efefef;
     box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
 }
@@ -53,8 +45,8 @@
     right: 8px;
     width: 28px;
     height: 28px;
-    background-color: #e8e6e0;
-    border-radius: 50%;
+    background-color: #a0a0a0;
+    border-radius: 0.25rem;
     z-index: 15;
 }
 
