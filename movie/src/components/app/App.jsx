@@ -7,7 +7,7 @@ import MoviesAddForm from "../movies-add-form/Movies-add-form";
 import { Component } from "react";
 import {v4 as uuidv4} from "uuid";
 
-import './App.css';
+import './App.scss';
 
 class App extends Component {
     constructor(props) {
