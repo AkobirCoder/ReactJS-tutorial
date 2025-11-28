@@ -3,7 +3,7 @@ import User from '../hook/Hook';
 import { Fragment } from 'react/jsx-runtime';
 import './App.css';
 
-function App() {
+const App = () => {
     return (
         <Fragment>
             <User firstName={"Akobir"} lastName={"Usmonov"} link={"https://t.me/csr0308"}/>
