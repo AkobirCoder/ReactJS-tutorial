@@ -1,4 +1,4 @@
-import { Component, Fragment, StrictMode } from 'react';
+import { Component, StrictMode } from 'react';
 
 import { Header, Navbar } from '../header/Header';
 import Field from '../field/Field';
@@ -182,7 +182,7 @@ function App() {
 
             {/* States */}
             <State />
-            <Fragment
+            <div
                 style={{
                     display: "flex",
                     justifyContent: "space-evenly",
@@ -195,7 +195,7 @@ function App() {
                 <StateSecond ism={"Akobir"} familiya={"Usmonov"} havola={"https://youtube.com"} />
                 <StateSecond ism={"Mashhurbek"} familiya={"Nasrullayev"} havola={"https://github.com"} />
                 <StateSecond ism={"Diyorbek"} familiya={"Ne'matov"} havola={"https://microsoft.com"} />
-            </Fragment>
+            </div>
         </div>
     );
 }
