@@ -6,7 +6,7 @@ import './App.css';
 const App = () => {
     return (
         <Fragment>
-            <User firstName={"Akobir"} lastName={"Usmonov"} link={"https://t.me/csr0308"}/>
+            <User firstName={"Akobir"} lastName={"Usmonov"} link={"https://t.me/csr0308"} login={"Login"} />
         </Fragment>
     );
 }
