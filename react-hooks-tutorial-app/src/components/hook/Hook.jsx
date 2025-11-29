@@ -18,6 +18,10 @@ const User = ({firstName, lastName, link}) => {
         setCount(0);
     }
 
+    const onAgeHandler = (e) => {
+        setAge(e.target.value);
+    }
+
     return (
         <div>
             <div>
@@ -26,7 +30,7 @@ const User = ({firstName, lastName, link}) => {
                     Mening Telegram profilim.
                 </a>
                 <p>{counter}</p>
-                <input type="text" />
+                <input type="text" onChange={onAgeHandler} />
                 <div>
                     <button onClick={onIncrement}>+</button>
                     <button onClick={onDecrement}>-</button>
