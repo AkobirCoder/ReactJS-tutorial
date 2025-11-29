@@ -6,12 +6,39 @@ const User = ({firstName, lastName, link}) => {
     const [counter, setCount] = useState(0);
     const [age, setAge] = useState(21);
 
+    // const onIncrement = () => {
+    //     setCount(counter + 1);
+    // }
+
+
+    // `prevState` ya'ni avvalgi holati holati orqali o'zgartirish:
+
+    // const onIncrement = () => {
+    //     setCount(prevState => {
+    //         return prevState + 1;
+    //     });
+    // }
+
+    // const onIncrement = () => {
+    //     setCount(counter + 1);
+    //     setCount(counter + 1); // bu ikkala setCount funksiyasi bitta bo'lgani uchun 100 marta chaqirilsa ham bir marta ishlaydi.
+    // }
+
+    
+    // counter +2 ga o'zgaradi:
+    
     const onIncrement = () => {
-        setCount(counter + 1);
+        setCount(prevState => prevState + 1);
+        setCount(prevState => prevState + 1); // ammo `prevState` orqali o'zgartirilsa avvalgi holatini o'zgartirib nechi marta chaqirilsa o'shancha marta o'zgaradi.
     }
 
+    // const onDecrement = () => {
+    //     setCount(counter - 1);
+    // }
+
     const onDecrement = () => {
-        setCount(counter - 1);
+        setCount(prevState => (prevState - 1));
+        setCount(prevState => (prevState - 1));
     }
 
     const onRestart = () => {
