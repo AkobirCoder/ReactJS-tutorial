@@ -19,15 +19,15 @@ class StateSecond extends Component {
     }
 
     onIncrement() { // bu holatda react development holatida `strict mode` rejimida ishlagani bois `context this` yo'qolib `undefined` chiqaradi
-        // this.setState(() => {
-        //     return {
-        //         counter: this.state.counter + 1,
-        //     }
-        // });
+        this.setState(({counter}) => {
+            return {
+                counter: counter + 1,
+            }
+        });
 
-        this.setState(prevState => ({
-            counter: prevState.counter + 1,
-        }));
+        // this.setState(prevState => ({
+        //     counter: prevState.counter + 1,
+        // }));
     }
 
     onDecrement() {
