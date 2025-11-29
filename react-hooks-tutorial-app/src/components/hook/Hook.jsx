@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 import './Hook.css';
 
-const User = ({firstName, lastName, link}) => {
+const User = ({firstName, lastName, link, login}) => {
     const [counter, setCount] = useState(0);
     const [age, setAge] = useState(21);
+    const [isLogin, setIsLogin] = useState(false);
 
     // const onIncrement = () => {
     //     setCount(counter + 1);
@@ -49,6 +50,13 @@ const User = ({firstName, lastName, link}) => {
         setAge(e.target.value);
     }
 
+    const onToggleLogin = () => {
+        setIsLogin(prevState => !prevState);
+    }
+
+
+    // Hooklarda obyektlardan foydalanish:
+
     return (
         <div>
             <div>
@@ -62,6 +70,10 @@ const User = ({firstName, lastName, link}) => {
                     <button onClick={onIncrement}>+</button>
                     <button onClick={onDecrement}>-</button>
                     <button onClick={onRestart}>0</button>
+                </div>
+                {isLogin ? <p>{login}</p> : null}
+                <div>
+                    <button onClick={onToggleLogin}>Toggle</button>
                 </div>
             </div>
         </div>
