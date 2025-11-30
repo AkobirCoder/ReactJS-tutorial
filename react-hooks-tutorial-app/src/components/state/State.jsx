@@ -50,6 +50,22 @@ class State extends Component {
         });
     }
 
+    componentDidMount() {
+        document.title = `Counter: ${this.state.counter}`;
+
+        console.log('Mounting');
+    }
+
+    componentDidUpdate() {
+        document.title = `Counter: ${this.state.counter}`;
+
+        console.log('Updating');
+    }
+
+    componentWillUnmount() {
+        console.log('Unmounting');
+    }
+
     render() {
         const {firstName, lastName, link, login} = this.props;
         const {counter, age, isLogin} = this.state;
