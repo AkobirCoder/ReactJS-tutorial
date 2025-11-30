@@ -98,24 +98,29 @@ const User = ({firstName, lastName, link, login}) => {
     const {counter, age, isLogin} = state;
 
     return (
-        <div className='container w-75'>
-            <div className='p-5 m-5 border rounded-3'>
+        <div className='container'>
+            <code>useState hook:</code>
+            <div className='w-75 p-5 mt-5 mx-auto border rounded-3'>
                 <h1>Mening ismim - {firstName}, familiyam - {lastName}, yoshim - {age} da.</h1>
                 <a href={link} target='_blank' rel='noreferrer'>
                     Mening Telegram profilim.
                 </a>
                 <p>{counter}</p>
                 <input className='form-control my-3' type="text" onChange={onAgeHandler} />
-                <div className='btn-group mb-3'>
-                    <button className='btn btn-success' onClick={onIncrement}>+</button>
-                    <button className='btn btn-danger' onClick={onDecrement}>-</button>
-                    <button className='btn btn-primary' onClick={onRestart}>0</button>
+                <div className='text-center mb-3'>
+                    <button className='btn btn-success mx-1' onClick={onIncrement}>+</button>
+                    <button className='btn btn-danger mx-1' onClick={onDecrement}>-</button>
+                    <button className='btn btn-primary mx-1' onClick={onRestart}>0</button>
                 </div>
-                {isLogin ? <p>{login}</p> : null}
-                <div>
+                {isLogin ? <p className='text-center'>{login}</p> : null}
+                <div className='text-center'>
                     <button className='btn btn-outline-dark' onClick={onToggleLogin}>Toggle</button>
                 </div>
             </div>
+            <hr />
+
+            <code>Lifecycle method:</code>
+
         </div>
     );
 }
