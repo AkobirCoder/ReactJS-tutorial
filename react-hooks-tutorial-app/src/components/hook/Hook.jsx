@@ -98,22 +98,22 @@ const User = ({firstName, lastName, link, login}) => {
     const {counter, age, isLogin} = state;
 
     return (
-        <div>
-            <div>
+        <div className='container w-75'>
+            <div className='p-5 m-5 border rounded-3'>
                 <h1>Mening ismim - {firstName}, familiyam - {lastName}, yoshim - {age} da.</h1>
                 <a href={link} target='_blank' rel='noreferrer'>
                     Mening Telegram profilim.
                 </a>
                 <p>{counter}</p>
-                <input type="text" onChange={onAgeHandler} />
-                <div>
-                    <button onClick={onIncrement}>+</button>
-                    <button onClick={onDecrement}>-</button>
-                    <button onClick={onRestart}>0</button>
+                <input className='form-control my-3' type="text" onChange={onAgeHandler} />
+                <div className='btn-group mb-3'>
+                    <button className='btn btn-success' onClick={onIncrement}>+</button>
+                    <button className='btn btn-danger' onClick={onDecrement}>-</button>
+                    <button className='btn btn-primary' onClick={onRestart}>0</button>
                 </div>
                 {isLogin ? <p>{login}</p> : null}
                 <div>
-                    <button onClick={onToggleLogin}>Toggle</button>
+                    <button className='btn btn-outline-dark' onClick={onToggleLogin}>Toggle</button>
                 </div>
             </div>
         </div>
