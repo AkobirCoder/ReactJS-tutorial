@@ -8,6 +8,8 @@ const App = () => {
     return (
         <Fragment>
             <User firstName={"Akobir"} lastName={"Usmonov"} link={"https://t.me/c_s_p0308"} login={"Login"} />
+
+            {/* Lifecycle method: */}
             <State firstName={"Azizbek"} lastName={"Usmonov"} link={"https://t.me/c_s_p0308"} login={"Login"} />
         </Fragment>
     );
