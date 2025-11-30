@@ -12,7 +12,7 @@ const User = ({firstName, lastName, link, login}) => {
     // // }
 
 
-    // // `prevState` ya'ni avvalgi holati holati orqali o'zgartirish:
+    // // `prevState` ya'ni avvalgi holati orqali o'zgartirish:
 
     // // const onIncrement = () => {
     // //     setCount(prevState => {
