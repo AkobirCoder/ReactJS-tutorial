@@ -27,9 +27,25 @@ class State extends Component {
     }
 
     onRestart = () => {
-        this.setState(({counter}) => {
+        this.setState(() => {
             return {
                 counter: 0,
+            }
+        });
+    }
+
+    onAgeHandler = (event) => {
+        this.setState(() => {
+            return {
+                age: event.target.value,
+            }
+        });
+    }
+
+    onToggleLogin = () => {
+        this.setState(({isLogin}) => {
+            return {
+                isLogin: !isLogin,
             }
         });
     }
