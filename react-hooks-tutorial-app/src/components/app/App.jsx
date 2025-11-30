@@ -9,7 +9,7 @@ const App = () => {
     const [isDisplay, setIsDisplay] = useState(true);
 
     const deleteDisplayHandler = () => {
-        setIsDisplay(false);
+        setIsDisplay(prevState => !prevState);
     }
 
     return (
