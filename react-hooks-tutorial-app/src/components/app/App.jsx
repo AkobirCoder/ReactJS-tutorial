@@ -1,4 +1,4 @@
-// import User from '../hook/Hook';
+import User from '../hooks/UseStateHook';
 
 import { Fragment } from 'react/jsx-runtime';
 import './App.css';
@@ -14,7 +14,7 @@ const App = () => {
 
     return (
         <Fragment>
-            {/* <User firstName={"Akobir"} lastName={"Usmonov"} link={"https://t.me/c_s_p0308"} login={"Login"} /> */}
+            <User firstName={"Akobir"} lastName={"Usmonov"} link={"https://t.me/c_s_p0308"} login={"Login"} />
 
             {/* Lifecycle method: */}
             {/* <State firstName={"Azizbek"} lastName={"Usmonov"} link={"https://t.me/c_s_p0308"} login={"Login"} /> */}
