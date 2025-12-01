@@ -25,11 +25,18 @@ const UserSecond = ({firstName, lastName, link, login}) => {
         setIsLogin((prevState) => !prevState);
     }
 
-    useEffect(() => { // componentDidMount and componentDidUpdate
+    useEffect(() => { // componentDidMount and componentDidUpdate. `useEffect(effect, deps)`
         console.log('Effect');
 
         document.title = `Counter: ${counter}`;
-    }, );
+
+        // componentWillUnmount effectini bajarish uchun quyidagi kod bajarilishi kerak:
+        return () => console.log('Deleted');
+    }, [counter]);
+
+    // useEffect() hookida deps (qaramlar) bor va mana shu deps (qaramlar) yordamida componentDidUpdate bo'ladi.
+    // Agar depsga bo'sh massiv(`[]`) berilsa, componentDidMount bo'ladi. 
+    // Hooklarni har doim function component yoki funksiyalar ichiga yozish mumkin, boshqa vaziyatlarda ishlamaydi.
 
     return (
         <div className='container'>
