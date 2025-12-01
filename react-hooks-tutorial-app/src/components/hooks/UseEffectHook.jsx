@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const UserSecond = ({firstName, lastName, link, login}) => {
     const [counter, setCounter] = useState(0);
@@ -24,6 +24,12 @@ const UserSecond = ({firstName, lastName, link, login}) => {
     const onToggleLogin = () => {
         setIsLogin((prevState) => !prevState);
     }
+
+    useEffect(() => { // componentDidMount and componentDidUpdate
+        console.log('Effect');
+
+        document.title = `Counter: ${counter}`;
+    }, );
 
     return (
         <div className='container'>
