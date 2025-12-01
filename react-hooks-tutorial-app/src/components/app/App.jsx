@@ -4,6 +4,7 @@ import { Fragment } from 'react/jsx-runtime';
 import './App.css';
 import State from '../state/State';
 import { useState } from 'react';
+import UserSecond from '../hooks/UseEffectHook';
 
 const App = () => {
     const [isDisplay, setIsDisplay] = useState(true);
@@ -14,6 +15,7 @@ const App = () => {
 
     return (
         <Fragment>
+            {/* useState hook: */}
             <User firstName={"Akobir"} lastName={"Usmonov"} link={"https://t.me/c_s_p0308"} login={"Login"} />
 
             {/* Lifecycle method: */}
@@ -23,6 +25,9 @@ const App = () => {
                 ? <State firstName={"Azizbek"} lastName={"Usmonov"} link={"https://t.me/c_s_p0308"} login={"Login"} />
                 : null
             }
+
+            {/* useEffect hook: */}
+            <UserSecond firstName={"AbuBakr"} lastName={"Usmonov"} link={"https://t.me/c_s_p0308"} login={"Login"} />
         </Fragment>
     );
 }
