@@ -118,9 +118,6 @@ const User = ({firstName, lastName, link, login}) => {
                 </div>
             </div>
             <hr />
-
-            <code>Lifecycle method:</code>
-
         </div>
     );
 }
