@@ -64,7 +64,7 @@ class State extends Component {
 
     componentWillUnmount() {
         alert('Component will unmount!');
-        
+
         console.log('Unmounting');
     }
 
@@ -75,6 +75,7 @@ class State extends Component {
 
         return (
             <div className="container">
+            <code>Lifecycle method:</code>
                 <div className='w-75 p-5 mt-5 mx-auto border rounded-3'>
                     <h1>Mening ismim - {firstName}, familiyam - {lastName}, yoshim - {age} da.</h1>
                     <a href={link} target='_blank' rel='noreferrer'>
@@ -92,8 +93,9 @@ class State extends Component {
                         <button className='btn btn-outline-dark' onClick={onToggleLogin}>Toggle</button>
                     </div>
                 </div>
+                <hr />
             </div>
-        )
+        );
     }
 }
 
