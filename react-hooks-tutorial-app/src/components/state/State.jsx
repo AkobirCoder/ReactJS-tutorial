@@ -63,7 +63,7 @@ class State extends Component {
     }
 
     componentWillUnmount() {
-        alert('Component will unmount!');
+        // alert('Component will unmount!');
 
         console.log('Unmounting');
     }
