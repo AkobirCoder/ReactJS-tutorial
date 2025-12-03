@@ -34,6 +34,12 @@ const UserSecond = ({firstName, lastName, link, login}) => {
         return () => console.log('Deleted');
     }, [counter]);
 
+    // useEffect(() => { // componentWillUnmount.
+    //     document.title = `Counter: ${counter}`;
+
+    //     return () => console.log('Deleted');
+    // }, []);
+
     // useEffect() hookida deps (qaramlar) bor va mana shu deps (qaramlar) yordamida componentDidUpdate bo'ladi.
     // Agar depsga bo'sh massiv(`[]`) berilsa, componentDidMount bo'ladi. 
     // Hooklarni har doim function component yoki funksiyalar ichiga yozish mumkin, boshqa vaziyatlarda ishlamaydi.
