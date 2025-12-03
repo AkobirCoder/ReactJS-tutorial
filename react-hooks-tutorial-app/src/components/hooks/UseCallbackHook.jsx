@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import CounterItem from "./useCallbackHook-counter-item/Counter-item";
 
 const UseCallbackHook = () => {
@@ -18,11 +18,16 @@ const UseCallbackHook = () => {
         setActive(prevState => !prevState);
     }
 
-    const counterGenerate = () => {
-        return new Array(counter).fill('').map((_, index) => `Counter number ${index + 1}`);
-    }
+    const counterGenerate = useCallback((count) => { // useCallback hookida uning callback function qismiga attribut berish mumkin va bu attribut hook o'zgaruvchi sifatida saqlangan funksiyaning parametriga ham beriladi.
+        return new Array(counter).fill('').map((_, index) => {
+            // return `Counter number ${index + 1}`;
+            return `Counter number ${index + count}`;
+        });
+    }, [counter]);
 
     // console.log(counterGenerate());
+
+    // useCallback hooki ham xuddi useEffect hooki kabi deps(qaramlar) beriladi va xuddi shu berilgan deps asosida hook vazifasini bajaradi.
 
     return (
         <div className="container">
