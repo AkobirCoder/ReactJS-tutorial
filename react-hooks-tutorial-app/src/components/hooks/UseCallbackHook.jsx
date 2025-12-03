@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CounterItem from "./useCallbackHook-counter-item/Counter-item";
 
 const UseCallbackHook = () => {
     const [counter, setCounter] = useState(0);
@@ -17,6 +18,12 @@ const UseCallbackHook = () => {
         setActive(prevState => !prevState);
     }
 
+    const counterGenerate = () => {
+        return new Array(counter).fill('').map((_, index) => `Counter number ${index + 1}`);
+    }
+
+    // console.log(counterGenerate());
+
     return (
         <div className="container">
             <code>useCallback hook:</code>
@@ -30,6 +37,9 @@ const UseCallbackHook = () => {
                     <button className="btn btn-warning mx-2" type="button" onClick={onToggle}>
                         Toggle
                     </button>
+                </div>
+                <div className="mt-4">
+                    <CounterItem counterGenerate={counterGenerate} />
                 </div>
             </div>
         </div>
