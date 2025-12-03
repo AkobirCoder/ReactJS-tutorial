@@ -64,6 +64,7 @@ const UserSecond = ({firstName, lastName, link, login}) => {
                     <button className='btn btn-outline-dark' onClick={onToggleLogin}>Toggle</button>
                 </div>
             </div>
+            <hr />
         </div>
     );
 }
