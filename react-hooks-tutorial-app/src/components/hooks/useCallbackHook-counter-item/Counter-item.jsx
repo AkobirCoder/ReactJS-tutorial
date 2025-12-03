@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 
 const CounterItem = ({counterGenerate}) => {
     const [item, setItem] = useState([]);
 
     useEffect(() => {
-        const newItem = counterGenerate();
+        const newItem = counterGenerate(8);
 
         setItem(newItem);
+
+        console.log('Render');
     }, [counterGenerate]);
     
     return (
-        <div>
+        <Fragment>
             <ul className='d-flex align-items-center flex-column'>
                 {
                     item.map((item) => (
@@ -18,7 +20,7 @@ const CounterItem = ({counterGenerate}) => {
                     ))
                 }
             </ul>
-        </div>
+        </Fragment>
     );
 }
 
