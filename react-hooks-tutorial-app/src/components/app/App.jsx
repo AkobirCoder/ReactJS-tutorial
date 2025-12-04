@@ -5,6 +5,7 @@ import State from '../state/State';
 import User from '../hooks/UseStateHook';
 import UserSecond from '../hooks/UseEffectHook';
 import UseCallbackHook from '../hooks/UseCallbackHook';
+import UseMemoHook from '../hooks/UseMemoHook';
 
 const App = () => {
     const [isDisplay, setIsDisplay] = useState(true);
@@ -35,6 +36,9 @@ const App = () => {
 
             {/* useCallback hook: */}
             <UseCallbackHook />
+
+            {/* useMemo hook: */}
+            <UseMemoHook />
         </Fragment>
     );
 }
