@@ -13,10 +13,11 @@ const CounterItem = ({counterGenerate}) => {
     
     return (
         <Fragment>
-            <ul className='d-flex align-items-center flex-column'>
+            {/* <ul className='d-flex align-items-center flex-column'> */}
+            <ul className='w-50 mx-auto list-group'>
                 {
                     item.map((item) => (
-                        <li key={item}>{item}</li>
+                        <li className='list-group-item text-center' key={item}>{item}</li>
                     ))
                 }
             </ul>
