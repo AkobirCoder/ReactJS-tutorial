@@ -45,7 +45,7 @@ const UserSecond = ({firstName, lastName, link, login}) => {
     // Hooklarni har doim function component yoki funksiyalar ichiga yozish mumkin, boshqa vaziyatlarda ishlamaydi.
 
     return (
-        <div className='container'>
+        <div className='container mb-5'>
             <code>useEffect hook:</code>
             <div className='w-75 p-5 mt-5 mx-auto border rounded-3'>
                 <h1>Mening ismim - {firstName}, familiyam - {lastName}, yoshim - {age} da.</h1>
