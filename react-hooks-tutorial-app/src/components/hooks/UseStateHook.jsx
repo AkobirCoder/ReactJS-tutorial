@@ -98,7 +98,7 @@ const User = ({firstName, lastName, link, login}) => {
     const {counter, age, isLogin} = state;
 
     return (
-        <div className='container'>
+        <div className='container mb-5'>
             <code>useState hook:</code>
             <div className='w-75 p-5 mt-5 mx-auto border rounded-3'>
                 <h1>Mening ismim - {firstName}, familiyam - {lastName}, yoshim - {age} da.</h1>
