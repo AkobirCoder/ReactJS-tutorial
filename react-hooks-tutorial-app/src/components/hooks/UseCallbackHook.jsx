@@ -47,6 +47,7 @@ const UseCallbackHook = () => {
                     <CounterItem counterGenerate={counterGenerate} />
                 </div>
             </div>
+            <hr />
         </div>
     );
 }
