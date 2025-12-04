@@ -4,6 +4,7 @@ import CounterItem from "./useCallbackHook-counter-item/Counter-item";
 const UseCallbackHook = () => {
     const [counter, setCounter] = useState(0);
     const [active, setActive] = useState(true);
+    const [direction, setDirection] = useState('increment');
 
     const colors = {
         fontWeight: "bold",
@@ -11,19 +12,33 @@ const UseCallbackHook = () => {
     }
 
     const onIncrement = () => {
+        setDirection('increment');
         setCounter((prevState) => prevState + 1);
+    }
+
+    const onDecrement = () => {
+        setDirection('decrement');
+        setCounter((prevState) => prevState - 1);
     }
 
     const onToggle = () => {
         setActive(prevState => !prevState);
     }
 
-    const counterGenerate = useCallback((count) => { // useCallback hookida uning callback function qismiga attribut berish mumkin va bu attribut hook o'zgaruvchi sifatida saqlangan funksiyaning parametriga ham beriladi.
+    // const counterGenerate = useCallback((count) => { // useCallback hookida uning callback function qismiga attribut berish mumkin va bu attribut hook o'zgaruvchi sifatida saqlangan funksiyaning parametriga ham beriladi.
+    //     return new Array(counter).fill('').map((_, index) => {
+    //         // return `Counter number ${index + 1}`;
+    //         return `Counter number ${index + count}`;
+    //     });
+    // }, [counter]);
+
+    const counterGenerate = useCallback((count) => {
         return new Array(counter).fill('').map((_, index) => {
-            // return `Counter number ${index + 1}`;
-            return `Counter number ${index + count}`;
+            return direction === 'increment'
+                ? `Counter number: ${index + count}`
+                : `Counter number: ${index + count - 1}`
         });
-    }, [counter]);
+    }, [counter, direction]);
 
     // console.log(counterGenerate());
 
@@ -38,6 +53,9 @@ const UseCallbackHook = () => {
                 <div className="d-flex justify-content-center">
                     <button className="btn btn-success mx-2" type="button" onClick={onIncrement}>
                         Increase
+                    </button>
+                    <button className="btn btn-danger mx-2" type="button" onClick={onDecrement}>
+                        Decrement
                     </button>
                     <button className="btn btn-warning mx-2" type="button" onClick={onToggle}>
                         Toggle
