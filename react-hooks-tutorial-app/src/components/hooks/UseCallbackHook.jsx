@@ -30,7 +30,7 @@ const UseCallbackHook = () => {
     // useCallback hooki ham xuddi useEffect hooki kabi deps(qaramlar) beriladi va xuddi shu berilgan deps asosida hook vazifasini bajaradi.
 
     return (
-        <div className="container">
+        <div className="container mb-5">
             <code>useCallback hook:</code>
             <div className="w-75 p-5 mt-5 mx-auto border rounded-3">
                 <h1 className="fs-3 fw-light text-center">useCallback hook</h1>
@@ -47,7 +47,6 @@ const UseCallbackHook = () => {
                     <CounterItem counterGenerate={counterGenerate} />
                 </div>
             </div>
-            <hr />
         </div>
     );
 }
