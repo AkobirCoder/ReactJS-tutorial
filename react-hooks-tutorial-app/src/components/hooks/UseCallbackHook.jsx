@@ -4,7 +4,7 @@ import CounterItem from "./useCallbackHook-counter-item/Counter-item";
 const UseCallbackHook = () => {
     const [counter, setCounter] = useState(0);
     const [active, setActive] = useState(true);
-    const [direction, setDirection] = useState('increment');
+    // const [direction, setDirection] = useState('increment');
 
     const colors = {
         fontWeight: "bold",
@@ -12,12 +12,12 @@ const UseCallbackHook = () => {
     }
 
     const onIncrement = () => {
-        setDirection('increment');
+        // setDirection('increment');
         setCounter((prevState) => prevState + 1);
     }
 
     const onDecrement = () => {
-        setDirection('decrement');
+        // setDirection('decrement');
         setCounter((prevState) => prevState - 1);
     }
 
@@ -32,13 +32,24 @@ const UseCallbackHook = () => {
     //     });
     // }, [counter]);
 
-    const counterGenerate = useCallback((count) => {
-        return new Array(counter).fill('').map((_, index) => {
-            return direction === 'increment'
-                ? `Counter number: ${index + count}`
-                : `Counter number: ${index + count - 1}`
+    // const counterGenerate = useCallback((count) => {
+    //     return new Array(counter).fill('').map((_, index) => {
+    //         return direction === 'increment'
+    //             ? `Counter number: ${index + count}`
+    //             : `Counter number: ${index + count - 1}`
+    //     });
+    // }, [counter, direction]);
+
+    const counterGenerate = useCallback((count, type) => {
+        return new Array(Math.max(counter, 0)).fill('').map((_, index) => {
+            if (type === 'inc') {
+                return `Counter number ${index + count}`;
+                
+            }
+
+            return `Counter number ${index + count - 1}`;
         });
-    }, [counter, direction]);
+    }, [counter]);
 
     // console.log(counterGenerate());
 
