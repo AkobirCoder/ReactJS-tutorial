@@ -4,7 +4,7 @@ const CounterItem = ({counterGenerate}) => {
     const [item, setItem] = useState([]);
 
     useEffect(() => {
-        const newItem = counterGenerate(1);
+        const newItem = counterGenerate(1, 'inc');
 
         setItem(newItem);
 
