@@ -74,7 +74,7 @@ class State extends Component {
         const {onIncrement, onDecrement, onRestart, onAgeHandler, onToggleLogin} = this;
 
         return (
-            <div className="container">
+            <div className="container mb-5">
             <code>Lifecycle method:</code>
                 <div className='w-75 p-5 mt-5 mx-auto border rounded-3'>
                     <h1>Mening ismim - {firstName}, familiyam - {lastName}, yoshim - {age} da.</h1>
