@@ -40,6 +40,9 @@ const UseCallbackHook = () => {
     //     });
     // }, [counter, direction]);
 
+
+    // Decrement orqali arrayni orqaga qaytarish:
+
     const counterGenerate = useCallback((count, type) => {
         return new Array(Math.max(counter, 0)).fill('').map((_, index) => {
             if (type === 'inc') {
