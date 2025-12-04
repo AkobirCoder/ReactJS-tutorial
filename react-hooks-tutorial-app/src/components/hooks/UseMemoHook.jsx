@@ -52,6 +52,7 @@ const UseMemoHook = () => {
                     </button>
                 </div>
             </div>
+            <hr />
         </div>
     );
 }
