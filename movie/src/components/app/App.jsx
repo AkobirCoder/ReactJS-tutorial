@@ -46,6 +46,18 @@ const App = () => {
 
         setData(newArray);
     }
+
+    const onToggleProp = (id, prop) => {
+        const newArray = data.map((item) => {
+            if (item.id === id) {
+                return {...item, [prop]: !item[prop]};
+            }
+
+            return item;
+        });
+
+        setData(newArray);
+    }
 }
 
 class App extends Component {
