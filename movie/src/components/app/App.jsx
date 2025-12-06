@@ -27,12 +27,16 @@ const App = () => {
     //     setData(newArray);
     // }
 
+    // const onDelete = (id) => {
+    //     setData((prevState) => {
+    //         return prevState.filter((item) => {
+    //             return item.id !== id;
+    //         });
+    //     });
+    // }
+
     const onDelete = (id) => {
-        setData((prevState) => {
-            return prevState.filter((item) => {
-                return item.id !== id;
-            });
-        });
+        setData(data.filter((item) => item.id !== id));
     }
 }
 
