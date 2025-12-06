@@ -41,3 +41,6 @@ const UseRefHook = () => {
 }
 
 export default UseRefHook;
+
+
+// state o'zgarib render bo'lganda reflar o'zgarmaydi. useRef hookining asosiy vazifasi elementga havola qoldirish.
