@@ -16,8 +16,8 @@ const App = () => {
         { name: "Omar", viewers: 1091, favourite: false, like: false, id: 3, },
     ]);
     const [term, setTerm] = useState('');
-    const [filter, setfilter] = useState('all');
-    const [errorMessage, seterrorMessage] = useState('');
+    const [filter, setFilter] = useState('all');
+    const [errorMessage, setErrorMessage] = useState('');
 
     // const onDelete = (id) => {
     //     setData((prevState) => {
@@ -35,6 +35,14 @@ const App = () => {
         const newArray = data.filter((item) => {
             return item.id !== id;
         });
+
+        setData(newArray);
+    }
+
+    const addForm = (item) => {
+        const newItem = {name: item.name, viewers: item.viewers, id: uuidv4(), favourite: false, like: false};
+
+        const newArray = [...data, newItem];
 
         setData(newArray);
     }
