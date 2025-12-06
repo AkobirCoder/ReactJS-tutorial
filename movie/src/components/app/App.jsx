@@ -58,6 +58,16 @@ const App = () => {
 
         setData(newArray);
     }
+
+    const searchHandler = (array, term) => {
+        if (term.length === 0) {
+            return array;
+        }
+
+        return array.filter((item) => {
+            return item.name.toLowerCase().indexOf(term) > -1;
+        });
+    }
 }
 
 class App extends Component {
