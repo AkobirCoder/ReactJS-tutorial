@@ -20,14 +20,6 @@ const App = () => {
     const [errorMessage, seterrorMessage] = useState('');
 
     // const onDelete = (id) => {
-    //     const newArray = data.filter((item) => {
-    //         return item.id !== id;
-    //     });
-
-    //     setData(newArray);
-    // }
-
-    // const onDelete = (id) => {
     //     setData((prevState) => {
     //         return prevState.filter((item) => {
     //             return item.id !== id;
@@ -35,8 +27,16 @@ const App = () => {
     //     });
     // }
 
+    // const onDelete = (id) => {
+    //     setData(data.filter((item) => item.id !== id));
+    // }
+
     const onDelete = (id) => {
-        setData(data.filter((item) => item.id !== id));
+        const newArray = data.filter((item) => {
+            return item.id !== id;
+        });
+
+        setData(newArray);
     }
 }
 
