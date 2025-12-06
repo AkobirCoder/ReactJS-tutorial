@@ -97,7 +97,7 @@ const App = () => {
     const visibleData = filterHandler(searchHandler(data, term), filter);
 
     return (
-        <div className="app font-monospace" onClick={() => this.setState({errorMessage: ''})}>
+        <div className="app font-monospace" onClick={() => this.setState({errorMessage: ''})}> {/* mana shu qismini to'g'irlash kerak */}
             <div className={`error-message ${errorMessage ? 'd-flex' : 'd-none'}`}>
                 {errorMessage && 
                     <div className="fs-4 message" onClick={(e) => e.stopPropagation()}>
