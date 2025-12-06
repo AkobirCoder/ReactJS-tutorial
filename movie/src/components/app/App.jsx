@@ -91,6 +91,38 @@ const App = () => {
     const updateFilterHandler = (filter) => {
         setFilter(filter);
     }
+
+    return (
+        <div className="app font-monospace" onClick={() => this.setState({errorMessage: ''})}>
+            <div className={`error-message ${errorMessage ? 'd-flex' : 'd-none'}`}>
+                {errorMessage && 
+                    <div className="fs-4 message" onClick={(e) => e.stopPropagation()}>
+                        <i 
+                            className="fa-solid fa-x fs-6 text-white" 
+                            onClick={() => this.setState({errorMessage: ''})}
+                        ></i>
+                        {errorMessage}
+                    </div>
+                }
+            </div>
+            <div className="content">
+                <AppInfo allMoviesCount={allMoviesCount} favouriteMoviesCount={favouriteMoviesCount} />
+                <div className="search-panel">
+                    <SearchPanel updateTermHandler={updateTermHandler} />
+                    <AppFilter filter={filter} updateFilterHandler={updateFilterHandler} />
+                </div>
+                {/* <MovieList data={data} onDelete={onDelete} onToggleFavourite={onToggleFavourite} onToggleLike={onToggleLike} /> */}
+                {/* <MovieList data={data} onDelete={onDelete} onToggleProp={onToggleProp} /> */}
+                {
+                    finalNoResultMessage && filteredByData.length === 0 
+                    ? (<div className="fs-5 result-message">{finalNoResultMessage}</div>) 
+                    : <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                }
+                
+                <MoviesAddForm addForm={addForm} />
+            </div>
+        </div>
+    );
 }
 
 class App extends Component {
