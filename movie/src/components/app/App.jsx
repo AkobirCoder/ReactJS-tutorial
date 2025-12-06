@@ -68,6 +68,10 @@ const App = () => {
             return item.name.toLowerCase().indexOf(term) > -1;
         });
     }
+
+    const updateTermHandler = (term) => {
+        setTerm(term);
+    }
     
     const filterHandler = (array, filter) => {
         switch (filter) {
@@ -84,9 +88,7 @@ const App = () => {
         }
     }
 
-    const updateTermHandler = (term) => {
-        setTerm(term);
-    }
+    
 }
 
 class App extends Component {
