@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const UseRefHook = () => {
     const [cardNumber, setCardNumber] = useState('');
@@ -26,10 +26,6 @@ const UseRefHook = () => {
             return dateRef.current.focus();
         }
     }
-
-    useEffect(() => {
-        console.log(cvcRef.current);
-    });
 
     return (
         <div className='container mb-5'>
