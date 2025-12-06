@@ -88,7 +88,9 @@ const App = () => {
         }
     }
 
-    
+    const updateFilterHandler = (filter) => {
+        setFilter(filter);
+    }
 }
 
 class App extends Component {
