@@ -4,10 +4,37 @@ import AppFilter from "../app-filter/App-filter";
 import MovieList from "../movie-list/Movie-list";
 import MoviesAddForm from "../movies-add-form/Movies-add-form";
 
-import { Component } from "react";
+import { Component, useState } from "react";
 import {v4 as uuidv4} from "uuid";
 
 import './App.scss';
+
+const App = () => {
+    const [data, setData] = useState([
+        { name: "Empire of Osman", viewers: 988, favourite: false, like: false, id: 1, },
+        { name: "Ertugrul", viewers: 789, favourite: false, like: false, id: 2, },
+        { name: "Omar", viewers: 1091, favourite: false, like: false, id: 3, },
+    ]);
+    const [term, setTerm] = useState('');
+    const [filter, setfilter] = useState('all');
+    const [errorMessage, seterrorMessage] = useState('');
+
+    const onDelete = (id) => {
+        const newArray = data.filter((item) => {
+            return item.id !== id;
+        });
+
+        setData(newArray);
+    }
+
+    // const onDelete = (id) => {
+    //     setData((prevState) => {
+    //         return prevState.filter((item) => {
+    //             return item.id !== id;
+    //         });
+    //     });
+    // }
+}
 
 class App extends Component {
     constructor(props) {
