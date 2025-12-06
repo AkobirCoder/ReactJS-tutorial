@@ -83,6 +83,10 @@ const App = () => {
                 return array;
         }
     }
+
+    const updateTermHandler = (term) => {
+        setTerm(term);
+    }
 }
 
 class App extends Component {
