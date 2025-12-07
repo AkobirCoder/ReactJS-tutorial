@@ -1,4 +1,4 @@
-import { Component } from 'react';
+// import { Component } from 'react';
 import { useState } from 'react';
 import './Search-panel.scss';
 
