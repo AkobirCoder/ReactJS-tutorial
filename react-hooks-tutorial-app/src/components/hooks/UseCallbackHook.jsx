@@ -47,7 +47,6 @@ const UseCallbackHook = () => {
         return new Array(Math.max(counter, 0)).fill('').map((_, index) => {
             if (type === 'inc') {
                 return `Counter number ${index + count}`;
-                
             }
 
             return `Counter number ${index + count - 1}`;
