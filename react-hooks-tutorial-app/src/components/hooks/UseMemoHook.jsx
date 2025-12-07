@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react';
 
 const bigCountNumber = (number) => {
     // console.log('Render');
