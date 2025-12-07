@@ -42,6 +42,17 @@ const App = () => {
     const addForm = (item) => {
         const newItem = {name: item.name, viewers: item.viewers, id: uuidv4(), favourite: false, like: false};
 
+        if (!item.name || !item.viewers) {
+            setErrorMessage('Iltimos kino kiriting');
+
+            setTimeout(() => {
+                const errorMessage = '';
+                setErrorMessage(errorMessage);
+            }, 6000);
+
+            return;
+        }
+
         const newArray = [...data, newItem];
 
         setData(newArray);
@@ -97,7 +108,7 @@ const App = () => {
     const visibleData = filterHandler(searchHandler(data, term), filter);
 
     return (
-        <div className="app font-monospace" onClick={() => this.setState({errorMessage: ''})}> {/* mana shu qismini to'g'irlash kerak */}
+        <div className="app font-monospace" onClick={() => setErrorMessage('')}> {/* mana shu qismini to'g'irlash kerak */}
             <div className={`error-message ${errorMessage ? 'd-flex' : 'd-none'}`}>
                 {errorMessage && 
                     <div className="fs-4 message" onClick={(e) => e.stopPropagation()}>
