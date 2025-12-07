@@ -114,7 +114,7 @@ const App = () => {
                     <div className="fs-4 message" onClick={(e) => e.stopPropagation()}>
                         <i 
                             className="fa-solid fa-x fs-6 text-white" 
-                            onClick={() => this.setState({errorMessage: ''})}
+                            onClick={() => setErrorMessage('')}
                         ></i>
                         {errorMessage}
                     </div>
