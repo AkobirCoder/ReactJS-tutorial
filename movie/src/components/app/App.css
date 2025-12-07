@@ -1,0 +1,73 @@
+.app {
+  height: 100vh;
+  color: #000;
+}
+
+.content {
+  max-width: 1000px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.search-panel {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  background-color: #fcfaf5;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.error-message {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+
+.message {
+  position: relative;
+  padding: 3rem 4.5rem;
+  background-color: #efefef;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  border: 1px solid #a0a0a0;
+}
+
+.message::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  background-color: #bebebe;
+  border-radius: 0.25rem;
+  border: 1px solid #a0a0a0;
+  z-index: 15;
+}
+
+.message i {
+  position: absolute;
+  top: 14px;
+  right: 12px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.result-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  background-color: #fcfaf5;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
+}/*# sourceMappingURL=App.css.map */
