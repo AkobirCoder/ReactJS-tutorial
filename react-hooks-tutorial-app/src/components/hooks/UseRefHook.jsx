@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react';
 
 const UseRefHook = () => {
     const [cardNumber, setCardNumber] = useState('');
@@ -36,6 +36,7 @@ const UseRefHook = () => {
                 <input ref={cvcRef} type="text" className='form-control mt-3 w-25' placeholder='Secure number' onChange={handleInputCvc} value={cvcNumber} />
                 <input ref={dateRef} type="text" className='form-control mt-3 w-25' placeholder='Year/Month' />
             </div>
+            <hr />
         </div>
     );
 }
