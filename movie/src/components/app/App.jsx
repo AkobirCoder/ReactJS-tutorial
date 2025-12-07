@@ -39,24 +39,7 @@ const App = () => {
         setData(newArray);
     }
 
-    const addForm = (item) => {
-        const newItem = {name: item.name, viewers: item.viewers, id: uuidv4(), favourite: false, like: false};
-
-        if (!item.name || !item.viewers) {
-            setErrorMessage('Iltimos kino kiriting');
-
-            setTimeout(() => {
-                const errorMessage = '';
-                setErrorMessage(errorMessage);
-            }, 6000);
-
-            return;
-        }
-
-        const newArray = [...data, newItem];
-
-        setData(newArray);
-    }
+    
 
     const onToggleProp = (id, prop) => {
         const newArray = data.map((item) => {
