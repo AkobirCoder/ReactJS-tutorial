@@ -7,6 +7,7 @@ import UserSecond from '../hooks/UseEffectHook';
 import UseCallbackHook from '../hooks/UseCallbackHook';
 import UseMemoHook from '../hooks/UseMemoHook';
 import UseRefHook from '../hooks/UseRefHook';
+import CustomHook from '../hooks/CustomHook';
 
 const App = () => {
     const [isDisplay, setIsDisplay] = useState(true);
@@ -43,6 +44,9 @@ const App = () => {
 
             {/* useRef hook: */}
             <UseRefHook />
+
+            {/* customHook: */}
+            <CustomHook />
         </Fragment>
     );
 }
