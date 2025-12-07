@@ -105,10 +105,12 @@ const App = () => {
 
     const allMoviesCount = data.length;
     const favouriteMoviesCount = data.filter((item) => item.favourite).length;
-    const visibleData = filterHandler(searchHandler(data, term), filter);
+    const filteredByData = searchHandler(data, term);
+    const visibleData = filterHandler(filteredByData, filter);
+    const finalNoResultMessage = filteredByData.length === 0 && term ? "Kino mavjud emas, iltimos to'g'ri nom kiriting" : "";
 
     return (
-        <div className="app font-monospace" onClick={() => setErrorMessage('')}> {/* mana shu qismini to'g'irlash kerak */}
+        <div className="app font-monospace" onClick={() => setErrorMessage('')}>
             <div className={`error-message ${errorMessage ? 'd-flex' : 'd-none'}`}>
                 {errorMessage && 
                     <div className="fs-4 message" onClick={(e) => e.stopPropagation()}>
@@ -126,12 +128,17 @@ const App = () => {
                     <SearchPanel updateTermHandler={updateTermHandler} />
                     <AppFilter filter={filter} updateFilterHandler={updateFilterHandler} />
                 </div>
-                {/* {
-                    finalNoResultMessage && filteredByData.length === 0 
-                    ? (<div className="fs-5 result-message">{finalNoResultMessage}</div>) 
-                    : <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
-                } */}
-                <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                {
+                    finalNoResultMessage && filteredByData.length === 0
+                    ? (<div className="fs-5 result-message">{finalNoResultMessage}</div>)
+                    : <MovieList visibleData={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                }
+                {
+                    // finalNoResultMessage && filteredByData.length === 0 
+                    // ? (<div className="fs-5 result-message">{finalNoResultMessage}</div>) 
+                    // : <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                }
+                {/* <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} /> */}
                 <MoviesAddForm addForm={addForm} />
             </div>
         </div>
