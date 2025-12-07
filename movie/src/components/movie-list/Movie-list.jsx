@@ -3,6 +3,26 @@ import MovieListItem from '../movie-list-item/Movie-list-item';
 
 import './Movie-list.scss';
 
+const MovieList = ({data, onDelete, onToggleProp}) => {
+    return (
+        <ul className='movie-list'>
+            {
+                data.map((item) => (
+                    <MovieListItem
+                        key={item.id}
+                        name={item.name}
+                        viewers={item.viewers}
+                        favourite={item.favourite}
+                        like={item.like}
+                        onDelete={() => onDelete(item.id)}   
+                        onToggleProp={(event) => onToggleProp(item.id, event.currentTarget.getAttribute('data-toggle'))}
+                    />
+                ))
+            }
+        </ul>
+    );
+}
+
 class MovieList extends Component { 
     constructor(props) {
         super(props);
