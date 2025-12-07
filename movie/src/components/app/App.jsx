@@ -39,7 +39,23 @@ const App = () => {
         setData(newArray);
     }
 
-    
+    const addForm = (item) => {
+        const newItem = {name: item.name, viewers: item.viewers, id: uuidv4(), favourite: false, like: false};
+        
+        if (!item.name || !item.viewers) {
+            setErrorMessage("Iltimos kino nomi va uning ko'rishlar sonini kiriting");
+
+            setTimeout(() => {
+                setErrorMessage('');
+            }, 5000);
+
+            return;
+        }
+
+        const newArray = [...data, newItem];
+
+        setData(newArray);
+    }
 
     const onToggleProp = (id, prop) => {
         const newArray = data.map((item) => {
