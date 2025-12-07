@@ -1,4 +1,4 @@
-import { Component } from 'react';
+// import { Component } from 'react';
 import MovieListItem from '../movie-list-item/Movie-list-item';
 
 import './Movie-list.scss';
