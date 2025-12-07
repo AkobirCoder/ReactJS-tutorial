@@ -4,7 +4,8 @@ import AppFilter from "../app-filter/App-filter";
 import MovieList from "../movie-list/Movie-list";
 import MoviesAddForm from "../movies-add-form/Movies-add-form";
 
-import { Component, useState } from "react";
+// import { Component } from "react";
+import { useState } from "react";
 import {v4 as uuidv4} from "uuid";
 
 import './App.scss';
