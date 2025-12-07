@@ -131,7 +131,7 @@ const App = () => {
                 {
                     finalNoResultMessage && filteredByData.length === 0
                     ? (<div className="fs-5 result-message">{finalNoResultMessage}</div>)
-                    : <MovieList visibleData={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                    : <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
                 }
                 <MoviesAddForm addForm={addForm} />
             </div>
