@@ -19,11 +19,15 @@ const MoviesAddForm = ({addForm}) => {
     const addFormHandler = (event) => {
         event.preventDefault();
 
+        const {name, viewers} = state;
+
+        // if (name === '' || viewers === '') { // inputlarga ma'lumotlar kiritilmasa data ga ma'lumot qo'shilmaydi
+        //     return;
+        // }
+
         // const data = {name: state.name, viewers: state.viewers};
 
         // addForm(data);
-
-        const {name, viewers} = state;
         
         addForm({name, viewers});
 
