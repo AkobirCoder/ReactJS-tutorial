@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react';
 
 const CounterItem = ({counterGenerate}) => {
     const [item, setItem] = useState([]);
