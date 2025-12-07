@@ -36,6 +36,7 @@
     background-color: #efefef;
     box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.15);
     border-radius: 0.25rem;
+    border: 1px solid #a0a0a0;
 }
 
 .message::after {
@@ -45,8 +46,9 @@
     right: 8px;
     width: 28px;
     height: 28px;
-    background-color: #a0a0a0;
+    background-color: #bebebe;
     border-radius: 0.25rem;
+    border: 1px solid #a0a0a0;
     z-index: 15;
 }
 
