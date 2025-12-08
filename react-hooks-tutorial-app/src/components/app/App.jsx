@@ -8,6 +8,7 @@ import UseCallbackHook from '../hooks/UseCallbackHook';
 import UseMemoHook from '../hooks/UseMemoHook';
 import UseRefHook from '../hooks/UseRefHook';
 import CustomHook from '../hooks/CustomHook';
+import SimpleStateManagement from '../state-management/SimpleStateManagement';
 
 const App = () => {
     const [isDisplay, setIsDisplay] = useState(true);
@@ -47,6 +48,9 @@ const App = () => {
 
             {/* customHook: */}
             <CustomHook />
+
+            {/* simple State management: */}
+            <SimpleStateManagement />
         </Fragment>
     );
 }
