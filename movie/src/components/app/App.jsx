@@ -143,15 +143,17 @@ const App = () => {
                             return (
                                 <div className="fs-5 result-message">{finalNoResultMessage}</div>
                             );
+                        } else if (allMoviesCount === 0) { // onDelete bosilaverganda data massivi uzunligi 0 ga tenglashadi va kino qolmaganda natija chiqishi
+                            return (
+                                <div className="fs-5 result-message">
+                                    Barcha kinolar o'chirildi, kino mavjud emas
+                                </div>
+                            );
                         } else if (visibleData.length === 0) { // filter shartiga mos kelmagan holda natija chiqishi
                             return (
                                 <div className="fs-5 result-message">
                                     Kino topilmadi
                                 </div>
-                            );
-                        } else if (allMoviesCount === 0) { // onDelete bosilaverganda data massivi uzunligi 0 ga tenglashadi va kino qolmaganda natija chiqishi
-                            return (
-                                <div className="fs-5 result-message">Barcha kinolar o'chirildi, kino mavjud emas</div>
                             );
                         } else {
                             return (
