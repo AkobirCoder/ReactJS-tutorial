@@ -3,9 +3,10 @@ import SearchPanel from "../search-panel/Search-panel";
 import AppFilter from "../app-filter/App-filter";
 import MovieList from "../movie-list/Movie-list";
 import MoviesAddForm from "../movies-add-form/Movies-add-form";
+import { Context } from "../../context";
 
 // import { Component } from "react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {v4 as uuidv4} from "uuid";
 
 import './App.scss';
@@ -19,6 +20,13 @@ const App = () => {
     const [term, setTerm] = useState('');
     const [filter, setFilter] = useState('all');
     const [errorMessage, setErrorMessage] = useState('');
+
+    // const value = useContext(Context);
+    // console.log(value);
+
+    // const {state, dispatch} = useContext(Context);
+    // console.log(state);
+    // console.log(dispatch); // davom ettirish kerak...: API bilan ishlashni ko'rish kerak
 
     // const onDelete = (id) => {
     //     setData((prevState) => {
