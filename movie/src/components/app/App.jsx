@@ -88,7 +88,7 @@ const App = () => {
         switch (filter) {
             case 'popular':
                 return array.filter((item) => {
-                    return item.like
+                    return item.like;
                 });
             case 'mostViewers':
                 return array.filter((item) => {
