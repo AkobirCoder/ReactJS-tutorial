@@ -107,7 +107,7 @@ const App = () => {
     const favouriteMoviesCount = data.filter((item) => item.favourite).length;
     const filteredByData = searchHandler(data, term);
     const visibleData = filterHandler(filteredByData, filter);
-    const finalNoResultMessage = filteredByData.length === 0 && term ? "Kino mavjud emas, iltimos to'g'ri nom kiriting" : "";
+    const finalNoResultMessage = filteredByData.length === 0 && term ? "Kino topilmadi, iltimos to'g'ri nom kiriting" : "";
 
     return (
         <div className="app font-monospace" onClick={() => setErrorMessage('')}>
