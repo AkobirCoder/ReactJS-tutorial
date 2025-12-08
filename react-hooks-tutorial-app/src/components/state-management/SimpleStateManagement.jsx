@@ -1,5 +1,9 @@
 import useInputValidation from "./custom-hook/UseInputValidation";
 
+const MyButton = ({children}) => {
+    return <button className="mt-3 btn btn-success">{children}</button>
+}
+
 const SimpleStateManagement = () => {
     const firstName = useInputValidation('');
     const lastName = useInputValidation('');
@@ -28,7 +32,8 @@ const SimpleStateManagement = () => {
                         onChange={lastName.onChange}
                     />
                 </div>
-                <button className="mt-3 btn btn-success">Send data</button>
+                <MyButton>my data</MyButton>
+                {/* <MyButton>Salom</MyButton> */}
             </div>
             <hr />
         </div>
