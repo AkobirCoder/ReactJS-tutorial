@@ -129,9 +129,25 @@ const App = () => {
                     <AppFilter filter={filter} updateFilterHandler={updateFilterHandler} />
                 </div>
                 {
-                    finalNoResultMessage && filteredByData.length === 0
-                    ? (<div className="fs-5 result-message">{finalNoResultMessage}</div>)
-                    : <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                    // finalNoResultMessage && filteredByData.length === 0
+                    // ? (<div className="fs-5 result-message">{finalNoResultMessage}</div>)
+                    // : <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+
+
+                    // IIFE (calling function) pattern:
+                    (() => {
+                        if (finalNoResultMessage && filteredByData.length === 0) {
+                            return (
+                                <div className="fs-5 result-message">{finalNoResultMessage}</div>
+                            );
+                        } else if (allMoviesCount === 0) {
+                            return (
+                                <div className="fs-5 result-message">Kino mavjud emas</div>
+                            );
+                        } else {
+                            return <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                        }
+                    })()
                 }
                 <MoviesAddForm addForm={addForm} />
             </div>
