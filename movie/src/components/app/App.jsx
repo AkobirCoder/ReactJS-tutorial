@@ -143,7 +143,7 @@ const App = () => {
                             );
                         } else if (allMoviesCount === 0) {
                             return (
-                                <div className="fs-5 result-message">Kino mavjud emas</div>
+                                <div className="fs-5 result-message">Barcha kinolar o'chirildi, kino mavjud emas</div>
                             );
                         } else {
                             return <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
