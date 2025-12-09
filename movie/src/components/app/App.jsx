@@ -3,7 +3,7 @@ import SearchPanel from "../search-panel/Search-panel";
 import AppFilter from "../app-filter/App-filter";
 import MovieList from "../movie-list/Movie-list";
 import MoviesAddForm from "../movies-add-form/Movies-add-form";
-import { Context } from "../../context";
+// import { Context } from "../../context";
 
 // import { Component } from "react";
 import { useContext, useState } from "react";
