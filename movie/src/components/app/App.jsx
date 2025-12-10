@@ -134,7 +134,8 @@ const App = () => {
                 });
 
                 setData(newArray);
-            });
+            })
+            .catch(error => console.log(error));
     }, []);
 
     const allMoviesCount = data.length;
