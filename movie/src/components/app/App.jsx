@@ -28,6 +28,7 @@ const App = () => {
     const [term, setTerm] = useState('');
     const [filter, setFilter] = useState('all');
     const [errorMessage, setErrorMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     // const value = useContext(Context);
     // console.log(value);
@@ -120,6 +121,7 @@ const App = () => {
     }
 
     useEffect(() => {
+        setIsLoading(true);
         fetch('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=5')
             .then(response => response.json())
             .then(json => {
@@ -135,7 +137,8 @@ const App = () => {
 
                 setData(newArray);
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error))
+            .finally(() => setIsLoading(false));
     }, []);
 
     const allMoviesCount = data.length;
@@ -177,6 +180,12 @@ const App = () => {
                         if (finalNoResultMessage && filteredByData.length === 0) { // search qilinganda term bilan data elementlari mos kelmaganda natija chiqishi
                             return (
                                 <div className="fs-5 result-message">{finalNoResultMessage}</div>
+                            );
+                        } else if (isLoading) {
+                            return (
+                                <div className="fs-5 result-message">
+                                    Iltimos biroz kuting va kinolar yuklanadi...
+                                </div>
                             );
                         } else if (allMoviesCount === 0) { // onDelete bosilaverganda data massivi uzunligi 0 ga tenglashadi va kino qolmaganda natija chiqishi
                             return (
