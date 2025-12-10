@@ -23,7 +23,8 @@ const App = () => {
     //     { name: "Ertugrul", viewers: 789, favourite: false, like: false, id: 2, },
     //     { name: "Omar", viewers: 1091, favourite: false, like: false, id: 3, },
     // ]);
-    const [data, setData] = useState(array);
+    // const [data, setData] = useState(array);
+    const [data, setData] = useState([]);
     const [term, setTerm] = useState('');
     const [filter, setFilter] = useState('all');
     const [errorMessage, setErrorMessage] = useState('');
@@ -121,7 +122,19 @@ const App = () => {
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=5')
             .then(response => response.json())
-            .then(json => console.log(json));
+            .then(json => {
+                const newArray = json.map((item) => {
+                    return {
+                        name: item.title,
+                        id: item.id,
+                        viewers: item.id * 300 + 98,
+                        favourite: false,
+                        like: false,
+                    }
+                });
+
+                setData(newArray);
+            });
     }, []);
 
     const allMoviesCount = data.length;
