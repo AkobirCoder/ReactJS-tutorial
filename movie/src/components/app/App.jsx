@@ -6,17 +6,24 @@ import MoviesAddForm from "../movies-add-form/Movies-add-form";
 // import { Context } from "../../context";
 
 // import { Component } from "react";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {v4 as uuidv4} from "uuid";
 
 import './App.scss';
 
-const App = () => {
-    const [data, setData] = useState([
+const array = [
         { name: "Empire of Osman", viewers: 988, favourite: false, like: false, id: 1, },
         { name: "Ertugrul", viewers: 789, favourite: false, like: false, id: 2, },
         { name: "Omar", viewers: 1091, favourite: false, like: false, id: 3, },
-    ]);
+    ];
+
+const App = () => {
+    // const [data, setData] = useState([
+    //     { name: "Empire of Osman", viewers: 988, favourite: false, like: false, id: 1, },
+    //     { name: "Ertugrul", viewers: 789, favourite: false, like: false, id: 2, },
+    //     { name: "Omar", viewers: 1091, favourite: false, like: false, id: 3, },
+    // ]);
+    const [data, setData] = useState(array);
     const [term, setTerm] = useState('');
     const [filter, setFilter] = useState('all');
     const [errorMessage, setErrorMessage] = useState('');
@@ -110,6 +117,12 @@ const App = () => {
     const updateFilterHandler = (filter) => {
         setFilter(filter);
     }
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/todos/')
+            .then(response => response.json())
+            .then(json => console.log(json));
+    }, []);
 
     const allMoviesCount = data.length;
     const favouriteMoviesCount = data.filter((item) => item.favourite).length;
