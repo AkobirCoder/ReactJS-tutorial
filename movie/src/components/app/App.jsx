@@ -119,7 +119,7 @@ const App = () => {
     }
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos/')
+        fetch('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=5')
             .then(response => response.json())
             .then(json => console.log(json));
     }, []);
