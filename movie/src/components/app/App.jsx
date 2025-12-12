@@ -11,11 +11,11 @@ import {v4 as uuidv4} from "uuid";
 
 import './App.scss';
 
-const array = [
-        { name: "Empire of Osman", viewers: 988, favourite: false, like: false, id: 1, },
-        { name: "Ertugrul", viewers: 789, favourite: false, like: false, id: 2, },
-        { name: "Omar", viewers: 1091, favourite: false, like: false, id: 3, },
-    ];
+// const array = [
+//         { name: "Empire of Osman", viewers: 988, favourite: false, like: false, id: 1, },
+//         { name: "Ertugrul", viewers: 789, favourite: false, like: false, id: 2, },
+//         { name: "Omar", viewers: 1091, favourite: false, like: false, id: 3, },
+//     ];
 
 const App = () => {
     // const [data, setData] = useState([
