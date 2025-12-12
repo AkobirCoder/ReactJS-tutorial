@@ -2,7 +2,7 @@ import useInputValidation from "./custom-hook/UseInputValidation";
 
 const MyButton = ({children}) => {
     return (
-        <button className="mt-3 btn btn-success">{children}</button>
+        <button className="mt-3 mx-2 btn btn-success">{children}</button>
     );
 }
 
