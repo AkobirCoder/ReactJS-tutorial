@@ -70,17 +70,17 @@ const App = () => {
         setData(newArray);
     }
 
-    const onToggleProp = (id, prop) => {
-        const newArray = data.map((item) => {
-            if (item.id === id) {
-                return {...item, [prop]: !item[prop]};
-            }
+    // const onToggleProp = (id, prop) => {
+    //     const newArray = data.map((item) => {
+    //         if (item.id === id) {
+    //             return {...item, [prop]: !item[prop]};
+    //         }
 
-            return item;
-        });
+    //         return item;
+    //     });
 
-        setData(newArray);
-    }
+    //     setData(newArray);
+    // }
 
     const searchHandler = (array, term) => {
         if (term.length === 0) {
@@ -199,7 +199,7 @@ const App = () => {
                         } else {
                             return (
                                 // <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
-                                <MovieList onToggleProp={onToggleProp} />
+                                <MovieList />
                             );
                         }
                     })()
