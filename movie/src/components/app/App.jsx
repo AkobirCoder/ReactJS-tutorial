@@ -6,7 +6,7 @@ import MoviesAddForm from "../movies-add-form/Movies-add-form";
 // import { Context } from "../../context";
 
 // import { Component } from "react";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {v4 as uuidv4} from "uuid";
 
 import './App.scss';
@@ -29,13 +29,6 @@ const App = () => {
     const [filter, setFilter] = useState('all');
     const [errorMessage, setErrorMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-
-    // const value = useContext(Context);
-    // console.log(value);
-
-    // const {state, dispatch} = useContext(Context);
-    // console.log(state);
-    // console.log(dispatch); // davom ettirish kerak...: API bilan ishlashni ko'rish kerak
 
     // const onDelete = (id) => {
     //     setData((prevState) => {
