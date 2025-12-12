@@ -1,7 +1,9 @@
 import useInputValidation from "./custom-hook/UseInputValidation";
 
 const MyButton = ({children}) => {
-    return <button className="mt-3 btn btn-success">{children}</button>
+    return (
+        <button className="mt-3 btn btn-success">{children}</button>
+    );
 }
 
 const SimpleStateManagement = () => {
@@ -33,7 +35,7 @@ const SimpleStateManagement = () => {
                     />
                 </div>
                 <MyButton>my data</MyButton>
-                {/* <MyButton>Salom</MyButton> */}
+                <MyButton>Salom</MyButton>
             </div>
             <hr />
         </div>
