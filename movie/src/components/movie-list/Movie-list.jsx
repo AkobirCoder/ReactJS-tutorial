@@ -7,7 +7,7 @@ import { searchHandler, filterHandler } from '../../utilities/data';
 import './Movie-list.scss';
 
 // const MovieList = ({data, onDelete, onToggleProp}) => {
-const MovieList = ({onDelete, onToggleProp}) => {
+const MovieList = ({onToggleProp}) => {
     const {state, dispatch} = useContext(Context);
     
     const filteredByData = searchHandler(state.data, state.term);
@@ -23,7 +23,8 @@ const MovieList = ({onDelete, onToggleProp}) => {
                         viewers={item.viewers}
                         favourite={item.favourite}
                         like={item.like}
-                        onDelete={() => onDelete(item.id)}   
+                        id={item.id}
+                        // onDelete={() => onDelete(item.id)}   
                         onToggleProp={(event) => onToggleProp(item.id, event.currentTarget.getAttribute('data-toggle'))}
                     />
                 ))
