@@ -1,4 +1,4 @@
-import { createContext } from "react"
+import { createContext, useReducer } from "react"
 
 const initialValue = {
     data: [],
@@ -27,8 +27,10 @@ const reducer = (state = initialValue, action) => {
 }
 
 const Provider = ({children}) => {
+    const [state, dispatch] = useReducer(reducer, initialValue);
+
     return (
-        <Context.Provider>{children}</Context.Provider>
+        <Context.Provider value={{state, dispatch}}>{children}</Context.Provider>
     );
 }
 
