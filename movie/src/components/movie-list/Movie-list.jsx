@@ -1,9 +1,18 @@
 // import { Component } from 'react';
+import { useContext } from 'react';
+import { Context } from '../../context';
 import MovieListItem from '../movie-list-item/Movie-list-item';
+import { searchHandler, filterHandler } from '../../utilities/data';
 
 import './Movie-list.scss';
 
-const MovieList = ({data, onDelete, onToggleProp}) => {
+// const MovieList = ({data, onDelete, onToggleProp}) => {
+const MovieList = ({onDelete, onToggleProp}) => {
+    const {state, dispatch} = useContext(Context);
+    
+    const filteredByData = searchHandler(state.data, state.term);
+    const data = filterHandler(filteredByData, state.filter);
+
     return (
         <ul className='movie-list'>
             {
