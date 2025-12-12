@@ -189,7 +189,7 @@ const App = () => {
                         } else if (visibleData.length === 0) { // filter shartiga mos kelmagan holda natija chiqishi
                             return (
                                 <div className="fs-5 result-message">
-                                    Kino topilmadi
+                                    Kino topilmadi. Yoqtirgan kinoyingizga yulduzcha bosing
                                 </div>
                             );
                         } else {
