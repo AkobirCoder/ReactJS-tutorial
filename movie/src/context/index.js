@@ -1,0 +1,35 @@
+import { createContext } from "react"
+
+const initialValue = {
+    data: [],
+    term: '',
+    filter: 'all',
+    errorMessage: '',
+    isLoading: false,
+}
+
+export const Context = createContext();
+
+const reducer = (state = initialValue, action) => {
+    const {type, payload} = action; // type - method yoki function nomi, payload - function yoki method uchun argument
+
+    switch (type) {
+        case 'ON_DELETE':
+            const deleteArray = state.data.filter((item) => {
+                return item.id !== payload;
+            });
+            return {
+                ...state, data:deleteArray
+            }
+        default:
+            return {state};
+    }
+}
+
+const Provider = ({children}) => {
+    return (
+        <Context.Provider>{children}</Context.Provider>
+    );
+}
+
+export default Provider;
