@@ -25,7 +25,7 @@ const MovieList = ({onToggleProp}) => {
                         like={item.like}
                         id={item.id}
                         // onDelete={() => onDelete(item.id)}   
-                        onToggleProp={(event) => onToggleProp(item.id, event.currentTarget.getAttribute('data-toggle'))}
+                        // onToggleProp={(event) => onToggleProp(item.id, event.currentTarget.getAttribute('data-toggle'))}
                     />
                 ))
             }
