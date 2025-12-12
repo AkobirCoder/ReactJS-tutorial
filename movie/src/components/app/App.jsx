@@ -131,6 +131,8 @@ const App = () => {
                 });
 
                 setData(newArray);
+
+                dispatch({type: 'GET_DATA', payload: newArray});
             })
             .catch(error => console.log(error))
             .finally(() => setIsLoading(false));
