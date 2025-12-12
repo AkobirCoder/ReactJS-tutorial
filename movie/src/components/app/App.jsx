@@ -3,10 +3,10 @@ import SearchPanel from "../search-panel/Search-panel";
 import AppFilter from "../app-filter/App-filter";
 import MovieList from "../movie-list/Movie-list";
 import MoviesAddForm from "../movies-add-form/Movies-add-form";
-// import { Context } from "../../context";
+import { Context } from "../../context";
 
 // import { Component } from "react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {v4 as uuidv4} from "uuid";
 
 import './App.scss';
@@ -29,6 +29,10 @@ const App = () => {
     const [filter, setFilter] = useState('all');
     const [errorMessage, setErrorMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+
+    const {state, dispatch} = useContext(Context)
+    console.log(state);
+    console.log(dispatch);
 
     // const onDelete = (id) => {
     //     setData((prevState) => {
