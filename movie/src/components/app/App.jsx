@@ -30,9 +30,7 @@ const App = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    const {state, dispatch} = useContext(Context)
-    console.log(state);
-    console.log(dispatch);
+    const {state, dispatch} = useContext(Context);
 
     // const onDelete = (id) => {
     //     setData((prevState) => {
