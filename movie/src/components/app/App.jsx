@@ -44,13 +44,13 @@ const App = () => {
     //     setData(data.filter((item) => item.id !== id));
     // }
 
-    const onDelete = (id) => {
-        const newArray = data.filter((item) => {
-            return item.id !== id;
-        });
+    // const onDelete = (id) => {
+    //     const newArray = data.filter((item) => {
+    //         return item.id !== id;
+    //     });
 
-        setData(newArray);
-    }
+    //     setData(newArray);
+    // }
 
     const addForm = (item) => {
         const newItem = {name: item.name, viewers: item.viewers, id: uuidv4(), favourite: false, like: false};
@@ -198,7 +198,8 @@ const App = () => {
                             );
                         } else {
                             return (
-                                <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                                // <MovieList data={visibleData} onDelete={onDelete} onToggleProp={onToggleProp} />
+                                <MovieList onToggleProp={onToggleProp} />
                             );
                         }
                     })()
