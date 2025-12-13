@@ -467,3 +467,10 @@ const App = () => {
 // }
 
 export default App;
+
+
+// Barcha kamchiliklar to'g'irlanishi kerak va bular quyidagilar:
+    // 1. MoviesAddForm componentidagi bo'sh input ketsa errorMessage chiqarish;
+    // 2. data itemlari ON_DELETE orqali to'liq o'chirilganda bu haqida xabar beruvchi matnni MovieList componentida render qilish;
+    // 3. searchHandler orqali kino qidirilganda data da bo'lmasa bu haqida xabar beruvchi matnni MovieList componentida render qilish; 
+    // 4. AppFilter componentida data dagi hech qaysi itemga ON_TOGGLE_PROP orqali yulduzcha bosilmaganda bu haqida xabar beruvchi matnni MovieList componentida render qilish;
