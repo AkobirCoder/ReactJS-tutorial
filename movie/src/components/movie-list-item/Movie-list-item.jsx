@@ -64,7 +64,7 @@ const MovieListItem = (props) => {
     // const {name, viewers, favourite, like, onDelete, onToggleProp, id} = props;    
     const {name, viewers, favourite, like, id} = props;    
 
-    const {state, dispatch} = useContext(Context);
+    const {dispatch} = useContext(Context);
 
     const onDelete = () => {
         dispatch({type: 'ON_DELETE', payload: id});
