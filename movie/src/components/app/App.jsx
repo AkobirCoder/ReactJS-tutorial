@@ -30,7 +30,7 @@ const App = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    const {state, dispatch} = useContext(Context);
+    const {dispatch} = useContext(Context);
 
     // const onDelete = (id) => {
     //     setData((prevState) => {
@@ -52,23 +52,23 @@ const App = () => {
     //     setData(newArray);
     // }
 
-    const addForm = (item) => {
-        const newItem = {name: item.name, viewers: item.viewers, id: uuidv4(), favourite: false, like: false};
+    // const addForm = (item) => {
+    //     const newItem = {name: item.name, viewers: item.viewers, id: uuidv4(), favourite: false, like: false};
         
-        if (!item.name || !item.viewers) {
-            setErrorMessage("Iltimos kino nomi va uning ko'rishlar sonini kiriting");
+    //     if (!item.name || !item.viewers) {
+    //         setErrorMessage("Iltimos kino nomi va uning ko'rishlar sonini kiriting");
 
-            setTimeout(() => {
-                setErrorMessage('');
-            }, 5000);
+    //         setTimeout(() => {
+    //             setErrorMessage('');
+    //         }, 5000);
 
-            return;
-        }
+    //         return;
+    //     }
 
-        const newArray = [...data, newItem];
+    //     const newArray = [...data, newItem];
 
-        setData(newArray);
-    }
+    //     setData(newArray);
+    // }
 
     // const onToggleProp = (id, prop) => {
     //     const newArray = data.map((item) => {
@@ -204,7 +204,8 @@ const App = () => {
                         }
                     })()
                 }
-                <MoviesAddForm addForm={addForm} />
+                {/* <MoviesAddForm addForm={addForm} /> */}
+                <MoviesAddForm />
             </div>
         </div>
     );
