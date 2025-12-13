@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from "uuid";
 import { createContext, useReducer } from "react"
 
 const initialValue = {
@@ -26,6 +27,31 @@ const reducer = (state = initialValue, action) => {
 
             return {
                 ...state, data: deleteArray
+            }
+
+        case 'ADD_FORM':
+            const {name, viewers} = payload;
+
+            const addFormArray = {
+                name: name, 
+                viewers: viewers, 
+                id: uuidv4(), 
+                favourite: false, 
+                like: false
+            };
+        
+            // if (!name || !viewers) {
+            //     setErrorMessage("Iltimos kino nomi va uning ko'rishlar sonini kiriting");
+
+            //     setTimeout(() => {
+            //         setErrorMessage('');
+            //     }, 5000);
+
+            //     return;
+            // }
+
+            return {
+                ...state, data: [...state.data, addFormArray]
             }
 
         case 'ON_TOGGLE_PROP':
