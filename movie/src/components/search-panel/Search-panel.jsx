@@ -1,16 +1,21 @@
 // import { Component } from 'react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './Search-panel.scss';
+import { Context } from '../../context';
 
 const SearchPanel = (props) => {
     const [term, setTerm] = useState('');
+
+    const {dispatch} = useContext(Context);
 
     const updateTermHandler = (event) => {
         const term = event.target.value.toLowerCase();
 
         setTerm(term);
 
-        props.updateTermHandler(term);
+        // props.updateTermHandler(term);
+
+        dispatch({type: 'ON_TERM', payload: term});
     }
 
     return (
