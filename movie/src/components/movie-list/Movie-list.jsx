@@ -8,7 +8,7 @@ import './Movie-list.scss';
 
 // const MovieList = ({data, onDelete, onToggleProp}) => {
 const MovieList = ({onToggleProp}) => {
-    const {state, dispatch} = useContext(Context);
+    const {state} = useContext(Context);
     
     const filteredByData = searchHandler(state.data, state.term);
     const data = filterHandler(filteredByData, state.filter);
