@@ -1,5 +1,6 @@
 // import { Component } from 'react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { Context } from '../../context';
 import './Movies-add-form.scss';
 
 const MoviesAddForm = ({addForm}) => {
@@ -7,6 +8,8 @@ const MoviesAddForm = ({addForm}) => {
         name: '',
         viewers: '',
     });
+
+    const {dispatch} = useContext(Context);
 
     const changeHandlerInput = (event) => {
         setState((prevState) => {
@@ -19,17 +22,19 @@ const MoviesAddForm = ({addForm}) => {
     const addFormHandler = (event) => {
         event.preventDefault();
 
-        const {name, viewers} = state;
+        // const {name, viewers} = state;
 
-        // if (name === '' || viewers === '') { // inputlarga ma'lumotlar kiritilmasa data ga ma'lumot qo'shilmaydi
-        //     return;
-        // }
+        if (name === '' || viewers === '') { // inputlarga ma'lumotlar kiritilmasa data ga ma'lumot qo'shilmaydi
+            return;
+        }
 
-        // const data = {name: state.name, viewers: state.viewers};
+        const data = {name: state.name, viewers: state.viewers};
 
         // addForm(data);
         
-        addForm({name, viewers});
+        // addForm({name, viewers});
+
+        dispatch({type: 'ADD_FORM', payload: data});
 
         setState({
             name: '',
