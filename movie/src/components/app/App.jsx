@@ -92,9 +92,9 @@ const App = () => {
         });
     }
 
-    const updateTermHandler = (term) => {
-        setTerm(term);
-    }
+    // const updateTermHandler = (term) => {
+    //     setTerm(term);
+    // }
     
     const filterHandler = (array, filter) => {
         switch (filter) {
@@ -111,9 +111,9 @@ const App = () => {
         }
     }
 
-    const updateFilterHandler = (filter) => {
-        setFilter(filter);
-    }
+    // const updateFilterHandler = (filter) => {
+    //     setFilter(filter);
+    // }
 
     useEffect(() => {
         setIsLoading(true);
@@ -162,8 +162,10 @@ const App = () => {
             <div className="content">
                 <AppInfo allMoviesCount={allMoviesCount} favouriteMoviesCount={favouriteMoviesCount} />
                 <div className="search-panel">
-                    <SearchPanel updateTermHandler={updateTermHandler} />
-                    <AppFilter filter={filter} updateFilterHandler={updateFilterHandler} />
+                    {/* <SearchPanel updateTermHandler={updateTermHandler} /> */}
+                    <SearchPanel />
+                    {/* <AppFilter filter={filter} updateFilterHandler={updateFilterHandler} /> */}
+                    <AppFilter />
                 </div>
                 {
                     // finalNoResultMessage && filteredByData.length === 0
