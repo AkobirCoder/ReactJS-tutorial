@@ -69,6 +69,16 @@ const reducer = (state = initialValue, action) => {
                 ...state, data: toggleArray
             }
 
+        case 'ON_TERM':
+            return {
+                ...state, term: payload
+            }
+
+        case 'ON_FILTER':
+            return {
+                ...state, filter: payload
+            }
+
         default:
             return {state};
     }
