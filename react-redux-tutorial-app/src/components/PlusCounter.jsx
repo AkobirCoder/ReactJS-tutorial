@@ -9,6 +9,8 @@ import { plusCounter } from '../reducers/countSlice';
 // }
 
 const AddCounter = () => {
+    // React Redux:
+
     const dispatch = useDispatch();
 
     return (
