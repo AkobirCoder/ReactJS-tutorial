@@ -9,6 +9,8 @@ import { resetCounter } from '../reducers/countSlice';
 // }
 
 const ResetCounter = () => {
+    // React Redux:
+
     const dispatch = useDispatch();
 
     return (
