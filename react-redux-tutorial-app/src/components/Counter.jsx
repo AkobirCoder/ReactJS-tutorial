@@ -14,6 +14,8 @@ import ResetCounter from './ResetCounter';
 // }
 
 const Counter = () => {
+    // React Redux:
+
     return (
         <div className='btn-group'>
             <PlusCounter />
