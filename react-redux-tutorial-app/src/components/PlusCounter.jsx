@@ -13,8 +13,13 @@ const AddCounter = () => {
 
     const dispatch = useDispatch();
 
+    const plusHandler = () => {
+        return dispatch(plusCounter());
+    }
+
     return (
-        <button className='btn btn-success' onClick={() => dispatch(plusCounter())}>Plus</button>
+        // <button className='btn btn-success' onClick={() => dispatch(plusCounter())}>Plus</button>
+        <button className='btn btn-success' onClick={plusHandler}>Plus</button>
     );
 }
 
