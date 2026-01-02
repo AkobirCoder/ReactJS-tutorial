@@ -13,8 +13,13 @@ const ResetCounter = () => {
 
     const dispatch = useDispatch();
 
+    const resetHandler = () => {
+        return dispatch(resetCounter());
+    }
+
     return (
-        <button className='btn btn-danger' onClick={() => dispatch(resetCounter())}>Reset</button>
+        // <button className='btn btn-danger' onClick={() => dispatch(resetCounter())}>Reset</button>
+        <button className='btn btn-danger' onClick={resetHandler}>Reset</button>
     );
 }
 
