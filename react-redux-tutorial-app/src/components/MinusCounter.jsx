@@ -12,9 +12,14 @@ const MinusCounter = () => {
     // React Redux:
 
     const dispatch = useDispatch();
+
+    const minusHandler = () => {
+        return dispatch(minusCounter());
+    }
     
     return (
-        <button className='btn btn-secondary' onClick={() => dispatch(minusCounter())}>Minus</button>
+        // <button className='btn btn-secondary' onClick={() => dispatch(minusCounter())}>Minus</button>
+        <button className='btn btn-secondary' onClick={minusHandler}>Minus</button>
     );
 }
 
