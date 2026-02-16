@@ -117,7 +117,7 @@ const App = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=5')
+        fetch('https://jsonplaceholder.typicode.com/todos?_start=0&_limit=10')
             .then(response => response.json())
             .then(json => {
                 const newArray = json.map((item) => {
